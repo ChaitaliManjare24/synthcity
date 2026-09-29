@@ -1,7 +1,7 @@
 # PROJECT SYNTHCITY NAGPUR - COMPLETE MULTI-AGENT CIVIC INTELLIGENCE PLATFORM MANUAL
 
 ## 1. Executive Summary & Architectural Overview
-**Project SynthCity Nagpur** is an autonomous, multi-agent civic intelligence and crisis response platform designed specifically for the Nagpur Metropolitan Region. The system bridges hardware telemetry (ESP-01 IoT flood sensors), citizen reporting channels (Telegram Bot API & Web Portal), multi-channel emergency alerting (WhatsApp Business API / Twilio), live open-data APIs (Open-Meteo Weather REST API & Google News RSS feeds), and real-time cloud sync (Firebase Realtime Database).
+**Project SynthCity Nagpur** is an autonomous, multi-agent civic intelligence and crisis response platform designed specifically for the Nagpur Metropolitan Region. The system bridges hardware telemetry (ESP32 IoT ultrasonic flood sensors), citizen reporting channels (Telegram Bot API & Web Portal), multi-channel emergency alerting (WhatsApp Business API / Twilio), live open-data APIs (Open-Meteo Weather REST API & Google News RSS feeds), and real-time cloud sync (Firebase Realtime Database).
 
 The platform orchestrates **6 specialized AI agents** operating in a coordinated 3-tier hierarchy to manage flood risks, vector health hazards, urban traffic bottlenecks, municipal field squad dispatches, and executive command.
 
@@ -38,10 +38,10 @@ The platform orchestrates **6 specialized AI agents** operating in a coordinated
 | Agent Symbol & Name | Role & Specialization | Hierarchy Tier | Domain & Geofence Scope | Core Capabilities & Directives |
 | :--- | :--- | :--- | :--- | :--- |
 | **👑 Synth-Pradhan** | District Orchestrator & Executive Command | Tier 1 (Admin Liaison) | Metropolitan Nagpur District | Approves municipal squad dispatches, issues executive orders, interfaces with Admin via Web & WhatsApp, escalates emergency alerts. |
-| **💧 Neer-Krishi** | Zone 1 Hydro-Agri Core | Tier 2 (Zone AI 1) | Kamptee Road, Nag River North Basin, Godhani Farmlands | Monitors Nag River water surge, ESP-01 ultrasonic sensor clearance, coordinates emergency dewatering pump transfers. |
+| **💧 Neer-Krishi** | Zone 1 Hydro-Agri Core | Tier 2 (Zone AI 1) | Kamptee Road, Nag River North Basin, Godhani Farmlands | Monitors Nag River water surge, ESP32 ultrasonic sensor clearance, coordinates emergency dewatering pump transfers. |
 | **🏙️ Nagari-Tantra** | Zone 2 Urban Infrastructure | Tier 2 (Zone AI 2) | Sitabuldi Commercial Hub, Dharampeth, Wardha Road | Manages market traffic gridlocks, stormwater culvert clearance, municipal garbage queues, and detour routing. |
 | **🏥 Swasthya-Raksha** | Zone 3 Health & Sanitation | Tier 2 (Zone AI 3) | Hingna MIDC Industrial Area, Ambazari Overflow Runoff | Monitors stagnant industrial runoff, predicts dengue vector breeding risks, coordinates mobile fogging units & triage. |
-| **📡 Data-Mitra** | Data Ingestion & Telemetry | Tier 3 (Backup / Internal AI 1) | System-Wide Knowledge Memory | Ingests Open-Meteo weather forecasts, Google News RSS feeds, website URLs, uploaded files, and ESP-01 IoT telemetry logs. |
+| **📡 Data-Mitra** | Data Ingestion & Telemetry | Tier 3 (Backup / Internal AI 1) | System-Wide Knowledge Memory | Ingests Open-Meteo weather forecasts, Google News RSS feeds, website URLs, uploaded files, and ESP32 IoT telemetry logs. |
 | **🔄 Marg-Darshak** | Route & Logistics Optimizer | Tier 3 (Backup / Internal AI 2) | Metropolitan Logistics Network | Calculates bypass routes (e.g. Outer Ring Road), pump transfer ETAs, vehicle navigation, and field squad dispatch logistics. |
 
 ---
@@ -69,7 +69,7 @@ The platform orchestrates **6 specialized AI agents** operating in a coordinated
   - `/chat` : Real-time inter-agent and Admin dialogue messages.
   - `/civic_problems` : Citizen Telegram reports and issue resolution queue.
   - `/field_dispatches` : Active municipal squad and vehicle dispatch records.
-  - `/telemetry/esp01_flood` : ESP-01 IoT ultrasonic water level telemetry.
+  - `/telemetry/esp32_flood` : ESP32 IoT ultrasonic water level telemetry.
   - `/alerts/whatsapp` : Dispatched WhatsApp emergency alert logs.
 
 ### 3.3 Open-Meteo Weather API (Nagpur Geolocation)
@@ -90,34 +90,34 @@ The platform orchestrates **6 specialized AI agents** operating in a coordinated
 
 ---
 
-## 4. Hardware Setup Guide: ESP-01 Ultrasonic Flood Sensor
+## 4. Hardware Setup Guide: ESP32 Ultrasonic Flood Sensor
 
 ### 4.1 Component List
-1. **ESP8266 ESP-01 Microcontroller Module** (WiFi-enabled IoT chip)
+1. **ESP32 Microcontroller Module** (WiFi + Bluetooth IoT Board)
 2. **HC-SR04 Ultrasonic Distance Sensor**
-3. **5V to 3.3V Step-down Power Supply Regulator Module**
+3. **Micro-USB Cable & Power Source**
 4. **Breadboard & Jumper Wires**
 
 ### 4.2 Pin Wiring Schematic
 ```
     ┌───────────────────────┐                  ┌───────────────────────┐
-    │     ESP8266 ESP-01    │                  │  HC-SR04 ULTRASONIC   │
+    │     ESP32 Dev Board   │                  │  HC-SR04 ULTRASONIC   │
     │                       │                  │                       │
-    │  GPIO0  ──────────────┼──────────────────┼──> TRIG               │
-    │  GPIO2  ──────────────┼──────────────────┼──> ECHO               │
-    │  VCC / CH_PD  ────────┼──────────────────┼──> 3.3V Power         │
-    │  GND  ────────────────┼──────────────────┼──> Common Ground      │
+    │  GPIO 5 (D5) ─────────┼──────────────────┼──> TRIG               │
+    │  GPIO 18 (D18) ───────┼──────────────────┼──> ECHO               │
+    │  VIN (5V) / 3.3V  ────┼──────────────────┼──> VCC                │
+    │  GND  ────────────────┼──────────────────┼──> GND (Common)       │
     └───────────────────────┘                  └───────────────────────┘
 ```
 
-### 4.3 Arduino C++ Compilation & Upload Instructions (`esp01_flood_sensor.ino`)
+### 4.3 Arduino C++ Compilation & Upload Instructions (`esp32_flood_sensor.ino`)
 1. Open **Arduino IDE** (v2.0 or higher).
-2. Go to **Preferences** $\rightarrow$ Additional Board Manager URLs, add: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`.
-3. Go to **Tools** $\rightarrow$ Board $\rightarrow$ Board Manager, search for `esp8266` and click **Install**.
-4. Select Board: `Generic ESP8266 Module`.
-5. Open `esp01_flood_sensor.ino` from workspace.
+2. Go to **Preferences** $\rightarrow$ Additional Board Manager URLs, add: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`.
+3. Go to **Tools** $\rightarrow$ Board $\rightarrow$ Board Manager, search for `esp32` and click **Install**.
+4. Select Board: `ESP32 Dev Module`.
+5. Open `esp32_flood_sensor.ino` from workspace.
 6. Replace `YOUR_WIFI_SSID` and `YOUR_WIFI_PASSWORD` with your local credentials.
-7. Click **Upload**. Sensor will poll distance every 5s and POST payloads to Firebase RTDB.
+7. Click **Upload**. Sensor will poll distance every 5s and POST payloads to Firebase RTDB & C2 backend.
 
 ---
 
@@ -151,4 +151,4 @@ The platform orchestrates **6 specialized AI agents** operating in a coordinated
 2. **Python Engine Test**:
    `python -c "import synthcity_engine"`
 3. **Resource Files Verification**:
-   `powershell -Command "Get-Item setup_manual.html, setup_manual.md, esp01_flood_sensor.ino, PROJECT_DOCUMENTATION.md | Select-Object Name, Length"`
+   `powershell -Command "Get-Item setup_manual.html, setup_manual.md, esp32_flood_sensor.ino, PROJECT_DOCUMENTATION.md | Select-Object Name, Length"`

@@ -333,68 +333,76 @@ def call_gemini_api(api_key, model_name, prompt, system_prompt="", history=None)
     return ans, reas
 
 # ==============================================================================
-# 4. 1-MINUTE AUTOMATED TELEGRAM WORKER DISPATCH LOOP
+# 4. THROTTLED AUTOMATED TELEGRAM WORKER DISPATCH LOOP (ANTI-SPAM 5-MIN INTERVAL)
 # ==============================================================================
+LAST_DISPATCH_TOPIC = None
+
 def worker_auto_dispatch_1min_loop():
-    time.sleep(10)
+    global LAST_DISPATCH_TOPIC
+    time.sleep(30)
     dispatch_counter = 0
     while True:
         try:
             state = load_c2_state()
-            dispatch_counter += 1
+            
+            # Only auto-dispatch if enabled in state or during active simulation
+            if state.get("auto_dispatch_enabled", False):
+                dispatch_counter += 1
 
-            target = "worker1" if (dispatch_counter % 2 == 1) else "worker2"
-            worker_short = "U" if target == "worker1" else "Ritesh"
+                target = "worker1" if (dispatch_counter % 2 == 1) else "worker2"
+                worker_short = "U" if target == "worker1" else "Ritesh"
 
-            topics = [
-                "Sitabuldi market stormwater drain clearance",
-                "Godhani agricultural soil saturation test",
-                "Ambazari lake promenade trash pickup",
-                "Wardha road municipal compactor status",
-                "Hingna MIDC industrial effluent check",
-                "Nag River dredging progress near Kamptee bridge"
-            ]
-            chosen_topic = topics[dispatch_counter % len(topics)]
+                topics = [
+                    "Sitabuldi market stormwater drain clearance",
+                    "Godhani agricultural soil saturation test",
+                    "Ambazari lake promenade trash pickup",
+                    "Wardha road municipal compactor status",
+                    "Hingna MIDC industrial effluent check",
+                    "Nag River dredging progress near Kamptee bridge"
+                ]
+                chosen_topic = topics[dispatch_counter % len(topics)]
 
-            prompt = (
-                f"Send a short 1-line civic field directive to {worker_short} regarding {chosen_topic}. "
-                f"Keep under 15 words, natural human tone, zero robotic template language."
-            )
+                if chosen_topic != LAST_DISPATCH_TOPIC:
+                    LAST_DISPATCH_TOPIC = chosen_topic
+                    prompt = (
+                        f"Send a short 1-line civic field directive to {worker_short} regarding {chosen_topic}. "
+                        f"Keep under 15 words, natural human tone, zero robotic template language."
+                    )
 
-            ans, reas = call_gemini_api(API_KEYS["admin"], "gemini-3.1-flash-lite", prompt, "You are Admin AI Synth-Pradhan messaging field workers with crisp civic directives.")
+                    ans, reas = call_gemini_api(API_KEYS["admin"], "gemini-3.1-flash-lite", prompt, "You are Admin AI Synth-Pradhan messaging field workers with crisp civic directives.")
 
-            if ans:
-                # Clean up any leftover prefixes
-                clean_ans = re.sub(r'^(AUTO DIRECTIVE|DIRECTIVE|OVERRIDE|SynthCity C2 Response:|Query processed\.|Operational directive issued\S*)\s*->?\s*(WORKER\d:?)?', '', ans, flags=re.IGNORECASE).strip()
-                if not clean_ans.startswith("Hi "):
-                    clean_ans = f"Hi {worker_short}, {clean_ans}"
+                    if ans:
+                        clean_ans = re.sub(r'^(AUTO DIRECTIVE|DIRECTIVE|OVERRIDE|SynthCity C2 Response:|Query processed\.|Operational directive issued\S*)\s*->?\s*(WORKER\d:?)?', '', ans, flags=re.IGNORECASE).strip()
+                        if not clean_ans.startswith("Hi "):
+                            clean_ans = f"Hi {worker_short}, {clean_ans}"
 
-                outbox_item = {
-                    "id": f"out_{int(time.time()*1000)}",
-                    "target": target,
-                    "message": clean_ans,
-                    "timestamp": time.time()
-                }
-                state["dashboard_outbox"].append(outbox_item)
-                
-                chat_item = {
-                    "id": f"msg_{int(time.time()*1000)}",
-                    "sender": f"Admin AI -> {worker_short}",
-                    "role": "dispatch",
-                    "zone": "1-Min Auto Dispatch",
-                    "message": clean_ans,
-                    "reasoning": reas,
-                    "timeStr": datetime.datetime.now().strftime("%H:%M:%S"),
-                    "timestamp": time.time()
-                }
-                state["chat"].append(chat_item)
-                save_c2_state(state)
-                print(f"[1-MIN WORKER DISPATCH] Sent to {target}: {clean_ans}")
+                        outbox_item = {
+                            "id": f"out_{int(time.time()*1000)}",
+                            "target": target,
+                            "message": clean_ans,
+                            "timestamp": time.time()
+                        }
+                        state["dashboard_outbox"].append(outbox_item)
+                        
+                        chat_item = {
+                            "id": f"msg_{int(time.time()*1000)}",
+                            "sender": f"Admin AI -> {worker_short}",
+                            "role": "dispatch",
+                            "zone": "Civic Dispatch",
+                            "message": clean_ans,
+                            "reasoning": reas,
+                            "timeStr": datetime.datetime.now().strftime("%H:%M:%S"),
+                            "timestamp": time.time()
+                        }
+                        state["chat"].append(chat_item)
+                        save_c2_state(state)
+                        print(f"[CIVIC DISPATCH] Sent to {target}: {clean_ans}")
 
         except Exception as e:
-            print(f"[1-MIN AUTO-DISPATCH WARNING]: {e}")
+            print(f"[AUTO-DISPATCH WARNING]: {e}")
 
-        time.sleep(60)
+        # Sleep 5 minutes (300s) to prevent spamming Telegram
+        time.sleep(300)
 
 LAST_IOT_WARN_SENT = 0
 LAST_IOT_CRIT_SENT = 0

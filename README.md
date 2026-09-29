@@ -1,42 +1,71 @@
-# Project SynthCity: Nagpur Multi-Agent Civic Intelligence Platform 🏙️💧⚡
+# Project SynthCity: Autonomous Multi-Agent Civic Intelligence Platform 🏙️💧⚡
+
+<div align="center">
+
+![Project SynthCity Hero Banner](assets/images/synthcity_hero_banner.jpg)
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2563eb?style=for-the-badge&logo=github&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
-[![Build Status](https://img.shields.io/badge/System-Operational-10b981?style=for-the-badge&logo=github-actions&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
+[![Build Status](https://img.shields.io/badge/System-Operational_2026-10b981?style=for-the-badge&logo=github-actions&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
+[![Hardware](https://img.shields.io/badge/Hardware-ESP32_+_HC--SR04-06B6D4?style=for-the-badge&logo=espressif&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
 [![Leaflet](https://img.shields.io/badge/Leaflet-v1.9.4-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
-> **Project SynthCity** is an autonomous, multi-agent civic intelligence and crisis response platform designed specifically for the **Nagpur Metropolitan Region, Maharashtra, India**. The system integrates hardware IoT telemetry (ESP-01 flood sensors), open weather data (Open-Meteo REST API), citizen Telegram reporting, dynamic field squad routing, and a 6-tier AI multi-agent orchestrator.
+<p align="center">
+  <b>Autonomous Multi-Agent Civic Orchestration, IoT Flood Sensor Telemetry & Crisis Management for Nagpur Metropolitan Region</b>
+</p>
+
+[🌐 **Launch Live Demo App**](https://yuvrajlokhande19.github.io/synthcity/) • [📸 **UI Screenshots**](#-system-screenshots--ui-walkthrough) • [🤖 **Multi-Agent Architecture**](#-6-ai-agent-multi-tier-architecture) • [🔌 **ESP32 Hardware Setup**](#-iot-hardware-telemetry--esp32-flood-station) • [🛠️ **Quick Start**](#️-quick-start-guide)
+
+</div>
+
+---
+
+## 🌟 Overview
+
+**Project SynthCity** is a 2026 next-generation, autonomous multi-agent civic intelligence and crisis response platform purpose-built for the **Nagpur Metropolitan Region, Maharashtra, India**. 
+
+The system harmonizes real-time **ESP32 IoT ultrasonic hydrological telemetry**, open weather feeds (Open-Meteo REST API), citizen reporting via Telegram C2 bot, dynamic municipal squad routing, and a **6-tier AI multi-agent swarm** powered by an intelligent key-rotator and multi-model cascade (Gemini 3.1 Flash Lite $\rightarrow$ Gemma 4 $\rightarrow$ Gemini 3.6 Flash).
+
+```
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                  SYNTHCITY CORE CAPABILITIES                                 ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║  • Autonomous Multi-Agent AI Swarm       • ESP32 + HC-SR04 Ultrasonic Telemetry Ingestion    ║
+║  • Contiguous Geospatial Geofences (GIS) • Telegram C2 Bot & WhatsApp-Style Web Console     ║
+║  • Live Google Docs Ingestion Matrix     • Real-time Flash Flood & Traffic Detour Simulator  ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ## 🌐 Live System Demo
 
-🔗 **Interactive Live Web App**: [https://yuvrajlokhande19.github.io/synthcity/](https://yuvrajlokhande19.github.io/synthcity/)
+🚀 **Interactive Web Application**: [https://yuvrajlokhande19.github.io/synthcity/](https://yuvrajlokhande19.github.io/synthcity/)
 
-No installation required to view the live interface! Simply open the link above to explore the interactive Nagpur geospatial map, trigger real-time flood simulations, view multi-agent neural chats, and inspect live field squad routing.
+> [!TIP]
+> **Zero Installation Required**: Open the link above in any modern browser to explore the interactive Esri geospatial map, trigger real-time Nag River flood simulations, test the WhatsApp-style Telegram dispatch console, and view live 24h ESP32 telemetry charts.
 
 ---
 
 ## 📸 System Screenshots & UI Walkthrough
 
 ### 1. Main Civic Intelligence Command & Control Dashboard
-*Interactive Leaflet.js map with Nagpur zone polygons (Neer-Krishi, Nagari-Tantra, Swasthya-Raksha), real-time weather cards, and pulse markers.*
+*Interactive GIS map with contiguous Nagpur zone polygons (Neer-Krishi, Nagari-Tantra, Swasthya-Raksha), live weather telemetry, active incident tickets, and quick scenario triggers.*
 
 ![SynthCity Dashboard Overview](assets/screenshots/synthcity_dashboard_overview.jpg)
 
 ---
 
 ### 2. Multi-Agent Neural Chat & Disaster Incident Simulation
-*Real-time AI-to-AI inter-agent reasoning stream orchestrating emergency response dispatches between Synth-Pradhan, Neer-Krishi, Nagari-Tantra, and Swasthya-Raksha.*
+*Real-time AI-to-AI reasoning feed and execution stream orchestrating emergency response dispatches between Synth-Pradhan, Neer-Krishi, Nagari-Tantra, and Swasthya-Raksha.*
 
 ![Multi-Agent Simulation & AI Chat](assets/screenshots/synthcity_ai_chat_simulation.jpg)
 
 ---
 
 ### 3. IoT Telemetry & Field Squad Dispatch Analytics
-*24-hour ESP-01 ultrasonic sensor water-level telemetry graph, incident resolution analytics per zone, and active municipal field squad tracker.*
+*24-hour ESP32 ultrasonic sensor water-level telemetry graph with dual flood peaks and 80cm critical threshold, civic resolution bar charts, and active municipal squad fleet tracker.*
 
 ![IoT Telemetry & Analytics](assets/screenshots/synthcity_analytics_hardware.jpg)
 
@@ -44,86 +73,108 @@ No installation required to view the live interface! Simply open the link above 
 
 ## 🤖 6-AI Agent Multi-Tier Architecture
 
-SynthCity operates using **6 specialized AI agents** structured in a 3-tier operational hierarchy:
+SynthCity operates using **6 specialized AI personas** structured in an autonomous command hierarchy:
 
+```mermaid
+flowchart TD
+    Admin["👑 Synth-Pradhan (District Orchestrator)<br/>Tier 1 - Executive Admin Directive"]
+    
+    Z1["💧 Neer-Krishi (Zone 1 Hydro-Agri)<br/>Kamptee Barrage & Crop Health"]
+    Z2["🏙️ Nagari-Tantra (Zone 2 Urban Core)<br/>Sitabuldi Traffic & Drainage"]
+    Z3["🏥 Swasthya-Raksha (Zone 3 Health-Sani)<br/>Hingna MIDC & Vector Control"]
+    
+    D1["📡 Data-Mitra (Backup 1)<br/>Weather & Google Docs Ingestion"]
+    D2["🔄 Marg-Darshak (Backup 2)<br/>Logistics & Detour Routing"]
+
+    Admin --> Z1
+    Admin --> Z2
+    Admin --> Z3
+    Z1 -.-> D1
+    Z2 -.-> D2
+    Z3 -.-> D1
+    
+    classDef admin fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff;
+    classDef z1 fill:#083344,stroke:#06b6d4,stroke-width:2px,color:#fff;
+    classDef z2 fill:#451a03,stroke:#f59e0b,stroke-width:2px,color:#fff;
+    classDef z3 fill:#3b0764,stroke:#a855f7,stroke-width:2px,color:#fff;
+    classDef backup fill:#0f172a,stroke:#64748b,stroke-width:1px,color:#fff;
+
+    class Admin admin;
+    class Z1 z1;
+    class Z2 z2;
+    class Z3 z3;
+    class D1,D2 backup;
 ```
-                          ┌─────────────────────────────────────────┐
-                          │   👑 Synth-Pradhan (Admin AI Liaison)   │
-                          │     District Orchestrator & Command      │
-                          └────────────────────┬────────────────────┘
-                                               │
-             ┌─────────────────────────────────┼─────────────────────────────────┐
-             ▼                                 ▼                                 ▼
-   ┌───────────────────┐             ┌───────────────────┐             ┌───────────────────┐
-   │  💧 Neer-Krishi   │             │ 🏙️ Nagari-Tantra  │             │ 🏥 Swasthya-Raksha│
-   │  Zone 1 Hydro-Agri│             │ Zone 2 Urban Infra│             │ Zone 3 Health-Sani│
-   └─────────┬─────────┘             └─────────┬─────────┘             └─────────┬─────────┘
-             │                                 │                                 │
-             └─────────────────────────────────┼─────────────────────────────────┘
-                                               │
-                                ┌──────────────┴──────────────┐
-                                ▼                             ▼
-                      ┌───────────────────┐         ┌───────────────────┐
-                      │  📡 Data-Mitra    │         │ 🔄 Marg-Darshak   │
-                      │  Backup AI 1      │         │ Backup AI 2       │
-                      │ Ingestion & Weather│        │ Route & Logistics │
-                      └───────────────────┘         └───────────────────┘
-```
+
+### Agent Domain Matrix
 
 | Agent Symbol & Name | Operational Domain | Role & Hierarchy Tier | Key Directives & Capabilities |
 | :--- | :--- | :--- | :--- |
 | **👑 Synth-Pradhan** | District-wide (Nagpur) | Tier 1 (Executive Admin) | Approves municipal dispatches, issues executive orders, manages cross-zone escalation. |
-| **💧 Neer-Krishi** | Zone 1 (Kamptee / Godhani) | Tier 2 (Hydro-Agri Core) | Monitors Nag River level surges, ESP-01 IoT telemetry, coordinates dewatering pumps. |
+| **💧 Neer-Krishi** | Zone 1 (Kamptee / Kanhan) | Tier 2 (Hydro-Agri Core) | Monitors Nag River level surges, ESP32 IoT telemetry, coordinates dewatering pumps. |
 | **🏙️ Nagari-Tantra** | Zone 2 (Sitabuldi / Dharampeth) | Tier 2 (Urban Infrastructure) | Resolves traffic gridlocks, stormwater culvert clearance, municipal garbage queues. |
-| **🏥 Swasthya-Raksha** | Zone 3 (Hingna MIDC / Ambazari) | Tier 2 (Health & Sanitation) | Tracks industrial runoff, predicts dengue vector breeding, dispatches mobile fogging. |
-| **📡 Data-Mitra** | System-Wide Knowledge | Tier 3 (Data Ingestion) | Ingests Open-Meteo weather telemetry, Google News RSS, and uploaded documents. |
-| **🔄 Marg-Darshak** | Metropolitan Transit Network | Tier 3 (Route & Logistics) | Calculates optimal detour routes (Outer Ring Road / Wardha Road) and pump squad ETAs. |
+| **🏥 Swasthya-Raksha** | Zone 3 (Hingna MIDC / MIHAN) | Tier 2 (Health & Sanitation) | Tracks industrial runoff, predicts vector breeding, dispatches mobile fogging. |
+| **📡 Data-Mitra** | System-Wide Knowledge | Tier 3 (Data Ingestion) | Ingests Open-Meteo weather telemetry, Google Docs live news, and uploaded documents. |
+| **🔄 Marg-Darshak** | Metropolitan Transit Network | Tier 3 (Route & Logistics) | Calculates optimal detour routes (Outer Ring Road / Wardha Road) and squad ETAs. |
+
+---
+
+## 🔌 IoT Hardware Telemetry & ESP32 Flood Station
+
+<div align="center">
+
+![ESP32 Ultrasonic Smart Flood Station](assets/images/synthcity_esp32_node.jpg)
+
+</div>
+
+SynthCity integrates live hydrological telemetry using the **ESP32 Microcontroller** and an **HC-SR04 Ultrasonic Distance Sensor** installed on bridge embankments (e.g. Nag River Kamptee Bridge intake):
+
+### Hardware Wiring Pinouts
+
+| Component Pin | ESP32 GPIO | Description | Voltage Rating |
+| :--- | :--- | :--- | :--- |
+| **TRIG** | `GPIO 5 (D5)` | Ultrasonic 10µs Sonar Trigger Pulse | 3.3V / 5V Logic |
+| **ECHO** | `GPIO 18 (D18)` | Return Pulse Echo Duration Read | 3.3V Safe (via Divider) |
+| **VCC** | `VIN / 5V` | Sensor Operating Power | 5V DC |
+| **GND** | `GND` | Common Ground Reference | 0V |
+
+```
+    ┌───────────────────────┐                  ┌───────────────────────┐
+    │     ESP32 Dev Board   │                  │  HC-SR04 ULTRASONIC   │
+    │                       │                  │                       │
+    │  GPIO 5 (D5) ─────────┼──────────────────┼──> TRIG               │
+    │  GPIO 18 (D18) ───────┼──────────────────┼──> ECHO               │
+    │  VIN (5V) / 3.3V  ────┼──────────────────┼──> VCC                │
+    │  GND  ────────────────┼──────────────────┼──> GND (Common)       │
+    └───────────────────────┘                  └───────────────────────┘
+```
+
+### Firmware Flash Instructions:
+1. Open [`esp32_flood_sensor.ino`](esp32_flood_sensor.ino) in the Arduino IDE.
+2. Select **ESP32 Dev Module** from the Tools $\rightarrow$ Board menu.
+3. Configure your local Wi-Fi credentials (`WIFI_SSID`, `WIFI_PASSWORD`).
+4. Upload to the ESP32 to begin streaming real-time distance telemetry to the C2 backend!
 
 ---
 
 ## ⚡ Key Technical Features & Innovations
 
-1. **Zero-Cost High Resilience AI Stack**:
-   - **Gemini Key Rotator**: Automatically rotates API keys upon encountering HTTP `429 Too Many Requests` or quota thresholds.
-   - **Dynamic Model Failover Chain**: Seamlessly cascades across `gemini-3.5-flash-lite` $\rightarrow$ `gemini-3.5-flash` $\rightarrow$ `gemini-3.6-flash`.
-   - **Open-Source Basemaps**: CARTO Dark Matter & Voyager layers zero-token Leaflet configuration.
+1. **Zero-Cost High-Resilience Multi-Model Cascade**:
+   - Rotates API keys upon encountering HTTP `429 Too Many Requests`.
+   - Cascades from `gemini-3.1-flash-lite` $\rightarrow$ `gemma-4-26b` $\rightarrow$ `gemini-3.6-flash`.
+   - Offline fallback simulation for stand-alone execution on GitHub Pages.
 
-2. **IoT Hardware Telemetry Integration**:
-   - Direct HTTP POST ingestion from **ESP-01 (ESP8266) + HC-SR04 ultrasonic sensors** deployed at critical water monitoring nodes (e.g., Nag River Kamptee Bridge).
+2. **Contiguous Geospatial Geofence Matrix**:
+   - Features Esri World Street Map as primary default basemap with Carto Voyager, Satellite, and Dark mode rotation.
+   - 3 organic contiguous zone polygons (Zone 1 Kamptee, Zone 2 Urban Core, Zone 3 Hingna/MIHAN) with zero empty gaps.
 
-3. **Live Weather Telemetry Ingestion**:
-   - Auto-synchronizes with **Open-Meteo REST API** targeted at Nagpur coordinates (`21.1458° N, 79.0882° E`), fetching temperature, rain probability, precipitation volume, and wind speed.
+3. **WhatsApp Web-Style Telegram C2 Console**:
+   - 2-panel dispatch interface with contact list (`Worker 1 U`, `Worker 2 Ritesh Alone`, `Dhynendra Gaurkar Citizen`).
+   - Double blue ticks (`✓✓`), quick directive chips, and automatic rate-limiting anti-spam cooldowns.
 
-4. **Multi-Channel Citizen Engagement & Dispatches**:
-   - Integrated **Telegram Bot API** (`@SynthCityNagpurBot`) receiving citizen complaint reports and auto-plotting geocoded incidents on the interactive map.
-   - Dispatches emergency notices via **WhatsApp Business / Twilio API** to key municipal field leads.
-
-5. **Glassmorphism Interactive Dashboard**:
-   - Clean, lightweight frontend built with HTML5, Tailwind CSS, Leaflet.js, Lucide Icons, and Chart.js.
-   - Real-time simulation trigger for instant demonstration of disaster management protocols.
-
----
-
-## 🔌 Hardware Setup: ESP-01 Ultrasonic Flood Sensor
-
-SynthCity supports live flood level monitoring using low-cost ESP8266 hardware:
-
-```
-    ┌───────────────────────┐                  ┌───────────────────────┐
-    │     ESP8266 ESP-01    │                  │  HC-SR04 ULTRASONIC   │
-    │                       │                  │                       │
-    │  GPIO0  ──────────────┼──────────────────┼──> TRIG               │
-    │  GPIO2  ──────────────┼──────────────────┼──> ECHO               │
-    │  VCC / CH_PD  ────────┼──────────────────┼──> 3.3V Power         │
-    │  GND  ────────────────┼──────────────────┼──> Common Ground      │
-    └───────────────────────┘                  └───────────────────────┘
-```
-
-### Flash Hardware Firmware:
-1. Open `esp01_flood_sensor.ino` in the Arduino IDE.
-2. Select **Generic ESP8266 Module** as the target board.
-3. Set your local Wi-Fi SSID and Password.
-4. Upload to the ESP-01 module to begin streaming live distance telemetry to the backend!
+4. **Live Google Docs Ingestion**:
+   - Continuous 40-minute synchronization with live Google Docs for District News.
+   - Overview live feed cards and dedicated 3-column knowledge terminal in Tab 7.
 
 ---
 
@@ -132,24 +183,25 @@ SynthCity supports live flood level monitoring using low-cost ESP8266 hardware:
 ```
 SynthCity/
 ├── index.html              # Main Command & Control Dashboard (GitHub Pages Ready)
-├── styles.css              # Glassmorphism styling, dark mode, animations
+├── styles.css              # Cyber-glass styling, dark mode, WhatsApp theme, tooltips
 ├── app.js                  # Frontend Leaflet map engine, telemetry & simulation UI logic
-├── config.js               # Zone boundaries, map tile endpoints & geocoding dictionary
+├── config.js               # Contiguous zone boundaries, map tile endpoints & dictionary
 ├── synthcity_engine.py     # Python Multi-Agent AI Engine with Key Rotator & Failover
-├── bot_engine.py           # Telegram Bot integration engine
-├── backend.py              # FastAPI / Python backend server
-├── esp01_flood_sensor.ino  # C++ Arduino firmware for ESP-01 IoT flood sensor
+├── bot_engine.py           # Telegram Bot integration engine with anti-spam cache
+├── backend.py              # Python C2 REST API Server
+├── esp32_flood_sensor.ino  # C++ Arduino firmware for ESP32 + HC-SR04 flood sensor
 ├── firebase_schema.json    # Firebase Realtime Database schema
 ├── database.rules.json     # Firebase security rules
 ├── requirements.txt        # Python dependency requirements
 ├── assets/
+│   ├── images/             # Generated AI hero banners & ESP32 hardware photos
 │   └── screenshots/        # High-res UI screenshot assets
 └── *.csv / *.xls           # Nagpur district demographic, health & ambulance datasets
 ```
 
 ---
 
-## 🛠️ Quick Start Guide (Local Setup)
+## 🛠️ Quick Start Guide
 
 ### 1. Clone the Repository
 ```bash
@@ -157,52 +209,31 @@ git clone https://github.com/yuvrajlokhande19/synthcity.git
 cd synthcity
 ```
 
-### 2. Run the Web Dashboard (Frontend)
-Simply open `index.html` in any web browser, or launch using Python's static server:
-
+### 2. Launch Local Dashboard
+Simply open `index.html` in any web browser, or start a local HTTP server:
 ```bash
 python -m http.server 8000
 ```
-Then navigate to `http://localhost:8000` in your web browser.
+Navigate to `http://localhost:8000` in your web browser.
 
-### 3. Run the AI Multi-Agent Engine (Backend Optional)
-To enable real-time Gemini AI response generation and key rotation:
-
+### 3. Start Python Multi-Agent Backend (Optional)
 ```bash
 pip install -r requirements.txt
-cp api_keys.example.txt api_keys.txt  # Add your Gemini API keys here
-python synthcity_engine.py
-```
-
-To execute an immediate mock disaster simulation via terminal:
-```bash
-python synthcity_engine.py --trigger-disaster
+python backend.py
 ```
 
 ---
 
-## 📊 Datasets Included
+## ☁️ Deployment on GitHub Pages
 
-This repository includes real-world civic & demographic datasets for Nagpur:
-- `DCHB_Town_Amenities-Maharashtra-NAGPUR-505.csv`: District Census Handbook town amenities matrix.
-- `DCHB_Village_Amenities-Maharashtra-Nagpur-505.csv`: Rural village amenities dataset.
-- `Ambulance_102_Information_Nagpur__0.csv`: 102 Ambulance service registry & dispatch locations.
-- `NFHS_5_Factsheets_Data.xls`: National Family Health Survey (NFHS-5) factsheet statistics for Nagpur district.
-
----
-
-## ☁️ Deployment
-
-The frontend dashboard is static and optimized for zero-cost hosting on **GitHub Pages**:
-
-1. Fork or clone this repository.
-2. Go to **Settings** $\rightarrow$ **Pages** in your GitHub repository.
-3. Under **Source**, select `Deploy from a branch` and set Branch to `main` (`/ (root)`).
-4. Click **Save**. Your site will be live at `https://<your-username>.github.io/synthcity/` within minutes!
+1. Fork or clone this repository to your GitHub account.
+2. Navigate to **Settings** $\rightarrow$ **Pages**.
+3. Under **Build and deployment** $\rightarrow$ **Source**, select `Deploy from a branch` and set Branch to `main` (`/ (root)`).
+4. Click **Save**. Your site will be live at `https://<your-username>.github.io/synthcity/` within 60 seconds!
 
 ---
 
 ## 📜 License & Credits
 
-Designed & Developed with ❤️ for **Nagpur Metropolitan Region** and Civic Tech Innovation.
+Designed & Developed with ❤️ for **Nagpur Metropolitan Region** and Civic Tech Innovation.  
 Licensed under the [MIT License](LICENSE).

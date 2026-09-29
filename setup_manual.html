@@ -69,11 +69,11 @@
           <span class="text-[10px] text-slate-400">Full Setup Manual (Markdown)</span>
         </div>
       </a>
-      <a href="esp01_flood_sensor.ino" download="esp01_flood_sensor.ino" class="glass-box p-3 hover:bg-sky-500/20 transition flex items-center space-x-3 border-sky-400/40">
+      <a href="esp32_flood_sensor.ino" download="esp32_flood_sensor.ino" class="glass-box p-3 hover:bg-sky-500/20 transition flex items-center space-x-3 border-sky-400/40">
         <span class="text-2xl">📡</span>
         <div>
-          <strong class="text-white block font-bold">esp01_flood_sensor.ino</strong>
-          <span class="text-[10px] text-slate-400">ESP-01 Arduino C++ Code</span>
+          <strong class="text-white block font-bold">esp32_flood_sensor.ino</strong>
+          <span class="text-[10px] text-slate-400">ESP32 Arduino C++ Code</span>
         </div>
       </a>
       <a href="PROJECT_DOCUMENTATION.md" download="PROJECT_DOCUMENTATION.md" class="glass-box p-3 hover:bg-indigo-500/20 transition flex items-center space-x-3 border-indigo-400/40">
@@ -123,7 +123,7 @@
           <img src="assets/screenshots/synthcity_analytics_hardware.jpg" alt="IoT Telemetry Analytics" class="w-full h-44 object-cover rounded-lg border border-white/10 hover:opacity-90 transition">
         </a>
         <h3 class="text-xs font-bold text-white">3. IoT Telemetry & Squad Tracker Analytics</h3>
-        <p class="text-[11px] text-slate-400">ESP-01 ultrasonic sensor water-level telemetry graphs, squad dispatches & incident resolution metrics.</p>
+        <p class="text-[11px] text-slate-400">ESP32 ultrasonic sensor water-level telemetry graphs, squad dispatches & incident resolution metrics.</p>
       </div>
     </div>
   </section>
@@ -154,7 +154,7 @@
             <td class="p-2 font-bold text-sky-300">💧 Neer-Krishi</td>
             <td class="p-2">Zone 1 Hydro-Agri Core</td>
             <td class="p-2">Tier 2 (Zone AI 1)</td>
-            <td class="p-2">Monitors Nag River surge, Godhani farmlands, ESP-01 sensor, requests dewatering pumps.</td>
+            <td class="p-2">Monitors Nag River surge, Godhani farmlands, ESP32 sensor, requests dewatering pumps.</td>
           </tr>
           <tr>
             <td class="p-2 font-bold text-indigo-300">🏙️ Nagari-Tantra</td>
@@ -185,38 +185,41 @@
     </div>
   </section>
 
-  <!-- Hardware Setup Guide for ESP-01 -->
+  <!-- Hardware Setup Guide for ESP32 -->
   <section class="glass-box p-6 space-y-4">
     <h2 class="text-base font-extrabold text-sky-300 flex items-center gap-2">
-      <span>📡 ESP-01 ULTRASONIC FLOOD SENSOR HARDWARE SETUP</span>
+      <span>📡 ESP32 ULTRASONIC FLOOD SENSOR HARDWARE SETUP</span>
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
       <div class="space-y-2">
         <h3 class="font-bold text-purple-200">Hardware Requirements:</h3>
         <ul class="list-disc pl-5 text-slate-300 space-y-1 font-mono text-[11px]">
-          <td>ESP8266 ESP-01 Microcontroller Module</td>
-          <td>HC-SR04 Ultrasonic Distance Sensor</td>
-          <td>3.3V Power Supply / Regulator</td>
-          <td>Jumper Wires & Breadboard</td>
+          <li>ESP32 Development Board (WiFi + Bluetooth)</li>
+          <li>HC-SR04 Ultrasonic Distance Sensor</li>
+          <li>Micro-USB Cable & Power Source</li>
+          <li>Jumper Wires & Breadboard</li>
         </ul>
         <h3 class="font-bold text-purple-200 pt-2">Wiring Connections:</h3>
         <div class="code-block text-[11px]">
-ESP-01 GPIO0  --> HC-SR04 TRIG
-ESP-01 GPIO2  --> HC-SR04 ECHO
-ESP-01 VCC    --> 3.3V Power
-ESP-01 CH_PD  --> 3.3V Power
-ESP-01 GND    --> Common Ground
+ESP32 GPIO 5 (D5)   --> HC-SR04 TRIG
+ESP32 GPIO 18 (D18) --> HC-SR04 ECHO
+ESP32 VIN (5V)      --> HC-SR04 VCC
+ESP32 GND           --> HC-SR04 GND (Common Ground)
         </div>
       </div>
       <div class="space-y-2">
-        <h3 class="font-bold text-purple-200">Arduino C++ Code Snippet (`esp01_flood_sensor.ino`):</h3>
+        <h3 class="font-bold text-purple-200">Arduino C++ Code Snippet (`esp32_flood_sensor.ino`):</h3>
         <pre class="code-block text-[10px] h-48 overflow-y-auto">
-#include &lt;ESP8266WiFi.h&gt;
-#include &lt;ESP8266HTTPClient.h&gt;
+#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
 
 const char* ssid = "YOUR_WIFI_SSID";
 const char* password = "YOUR_WIFI_PASSWORD";
-const char* firebaseUrl = "https://my-project-1-602b7-default-rtdb.firebaseio.com/telemetry/esp01_flood.json";
+const char* firebaseUrl = "https://my-project-1-602b7-default-rtdb.firebaseio.com/telemetry/esp32_flood.json";
+        </pre>
+      </div>
+    </div>
+  </section>
 
 const int TRIG_PIN = 0; // GPIO0
 const int ECHO_PIN = 2; // GPIO2

@@ -223,20 +223,24 @@ def check_telegram_bot_updates(bot_token):
         print(f"[WARNING] Telegram Poll Warning: {e}")
     return []
 
-def fb_update_hardware_esp01(distance_cm=120, rssi=-64):
-    """Pushes ESP-01 ultrasonic sensor telemetry to Firebase REST endpoint."""
+def fb_update_hardware_esp32(distance_cm=120, rssi=-64):
+    """Pushes ESP32 ultrasonic sensor telemetry to Firebase REST endpoint."""
     payload = {
+        "microcontroller": "ESP32",
         "distance_cm": distance_cm,
         "sensor_height_cm": 300,
         "rssi": rssi,
         "timestamp": int(time.time() * 1000)
     }
     try:
-        url = f"{FIREBASE_RTDB_URL}/hardware/esp01.json"
+        url = f"{FIREBASE_RTDB_URL}/hardware/esp32.json"
         requests.put(url, json=payload, timeout=5)
-        print(f"[HARDWARE] ESP-01 Telemetry Pushed: Distance={distance_cm}cm")
+        print(f"[HARDWARE] ESP32 Telemetry Pushed: Distance={distance_cm}cm")
     except Exception as e:
         print(f"[WARNING] Hardware Telemetry Push Error: {e}")
+
+# Backward compatibility alias
+fb_update_hardware_esp01 = fb_update_hardware_esp32
 
 def fb_post_chat(sender, role, zone, message, color="#7c3aed", icon="[AI]"):
     """Pushes a chat message into Firebase Realtime Database."""

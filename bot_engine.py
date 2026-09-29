@@ -357,6 +357,23 @@ async def handle_telegram_message(update: Update, context: ContextTypes.DEFAULT_
         ai_reply, reasoning, model_used = ai_engine.generate("admin", text)
         await context.bot.send_message(chat_id=sender_id, text=ai_reply)
 
+# Message Deduplication & Anti-Spam Cache
+SENT_MESSAGES_CACHE = {}
+
+def should_send_message(chat_id, text, cooldown_secs=30):
+    global SENT_MESSAGES_CACHE
+    now = time.time()
+    # Clean old cache entries
+    SENT_MESSAGES_CACHE = {k: v for k, v in SENT_MESSAGES_CACHE.items() if now - v < 120}
+    
+    key = f"{chat_id}:{text.strip().lower()}"
+    if key in SENT_MESSAGES_CACHE:
+        if now - SENT_MESSAGES_CACHE[key] < cooldown_secs:
+            logger.info(f"[ANTI-SPAM SUPPRESSION] Suppressing duplicate message to {chat_id}: {text[:40]}...")
+            return False
+    SENT_MESSAGES_CACHE[key] = now
+    return True
+
 # ==============================================================================
 # CONTINUOUS DASHBOARD OUTBOX & DISPATCH LISTENER
 # ==============================================================================
@@ -384,18 +401,19 @@ async def dashboard_outbox_listener(app):
                     target_chat_id = CITIZEN_Z2_ID
 
                 if target_chat_id and str(target_chat_id).isdigit():
-                    try:
-                        await app.bot.send_message(chat_id=int(target_chat_id), text=msg_text)
-                        logger.info(f"[OUTBOX PUSH SUCCESS] -> {target}: {msg_text}")
-                    except Exception as err:
-                        logger.error(f"[OUTBOX PUSH ERROR]: {err}")
+                    if should_send_message(target_chat_id, msg_text, cooldown_secs=30):
+                        try:
+                            await app.bot.send_message(chat_id=int(target_chat_id), text=msg_text)
+                            logger.info(f"[OUTBOX PUSH SUCCESS] -> {target}: {msg_text}")
+                        except Exception as err:
+                            logger.error(f"[OUTBOX PUSH ERROR]: {err}")
                 else:
                     logger.info(f"[OUTBOX LOGGED LOCAL] Target '{target}': {msg_text}")
 
         except Exception as e:
             logger.error(f"[OUTBOX LOOP ERROR]: {e}")
 
-        await asyncio.sleep(1.5)
+        await asyncio.sleep(2.0)
 
 # ==============================================================================
 # MAIN BOT ENGINE LAUNCHER
