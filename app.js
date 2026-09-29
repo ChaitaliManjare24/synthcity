@@ -1453,8 +1453,26 @@ function quickWaterSpike() {
   DEFAULT_C2_STATE.iot_sensor.status = 'CRITICAL SURGE (>80cm)';
   DEFAULT_C2_STATE.emergency_active = true;
 
+  if (overviewMap) {
+    const spikeMarker = L.circleMarker([21.2200, 79.1100], {
+      radius: 14,
+      fillColor: "#ef4444",
+      color: "#ffffff",
+      weight: 3,
+      fillOpacity: 0.95
+    }).addTo(overviewMap);
+
+    spikeMarker.bindPopup(`
+      <div style="font-family: sans-serif; padding: 6px; max-width: 220px;">
+        <strong style="color: #ef4444; font-size: 13px;">🚨 ESP32 WATER SPIKE</strong><br/>
+        <p style="font-size: 11px; color: #0f172a; margin-top: 4px; font-weight: 600;">Water level: 142.5cm (Threshold: 80cm). Dewatering Unit #1 Dispatched.</p>
+      </div>
+    `).openPopup();
+  }
+
   showToast("🚨 CRITICAL WATER SPIKE (+65cm)", "ESP32 Sensor reading: 142.5cm (>80cm Threshold). Dewatering active!", "error");
   updateDashboardUI(DEFAULT_C2_STATE);
+  renderAnalyticsCharts();
   switchTab('analytics');
 }
 
@@ -1466,5 +1484,21 @@ function quickResetSensors() {
 
   showToast("🛡️ TELEMETRY RESTORED", "All 1,842 Nagpur IoT nodes operating at normal baseline (22.5cm).", "success");
   updateDashboardUI(DEFAULT_C2_STATE);
+  initOverviewMap();
   switchTab('overview');
 }
+
+// Explicit Window Export for Bulletproof Standalone Execution
+window.triggerSimulation = triggerSimulation;
+window.quickScenario = quickScenario;
+window.quickWaterSpike = quickWaterSpike;
+window.quickResetSensors = quickResetSensors;
+window.switchTab = switchTab;
+window.toggleMapTheme = toggleMapTheme;
+window.selectTelegramContact = selectTelegramContact;
+window.sendTgDirectMessage = sendTgDirectMessage;
+window.triggerAutoAIDebate = triggerAutoAIDebate;
+window.refreshGoogleDocsNow = refreshGoogleDocsNow;
+window.openEmergencyModal = openEmergencyModal;
+window.closeEmergencyModal = closeEmergencyModal;
+window.triggerEmergencyEvacuationModal = triggerEmergencyEvacuationModal;

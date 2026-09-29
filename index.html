@@ -26,9 +26,9 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Configuration & Custom Styles -->
-  <script src="config.js"></script>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Configuration & Custom Styles with Cache-Buster -->
+  <script src="config.js?v=2026.3"></script>
+  <link rel="stylesheet" href="styles.css?v=2026.3">
 
   <script>
     tailwind.config = {
@@ -211,25 +211,25 @@
         <!-- INTERACTIVE QUICK ACTION & SCENARIO TRIGGERS BAR -->
         <div class="glass-card p-3.5 px-5 flex flex-wrap items-center justify-between gap-3 border border-white/15 bg-[#101926]/90 shadow-xl rounded-2xl">
           <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-            <span class="uppercase tracking-wider text-[11px] text-cyan-300 font-extrabold">Scenario Triggers:</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+            <span class="uppercase tracking-wider text-[11px] text-cyan-300 font-extrabold">⚡ Scenario Simulators:</span>
           </div>
 
           <div class="flex flex-wrap items-center gap-2 text-xs">
-            <button onclick="triggerSimulation()" class="px-3.5 py-1.5 rounded-xl bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 border border-blue-500/40 font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm" data-tooltip="Trigger comprehensive multi-zone flood & detour scenario">
-              ⚡ Flash Flood & Detour
+            <button onclick="triggerSimulation()" class="btn-sim-flood px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
+              <span>⚡</span> Flash Flood & Detour
             </button>
-            <button onclick="quickScenario('traffic_gridlock')" class="px-3.5 py-1.5 rounded-xl bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 border border-amber-500/40 font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm" data-tooltip="Simulate Sitabuldi interchange culvert overflow & VMS detour">
-              🚦 Sitabuldi Traffic Snarl
+            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Sitabuldi interchange culvert overflow & VMS detour">
+              <span>🚦</span> Sitabuldi Traffic Snarl
             </button>
-            <button onclick="quickScenario('vector_outbreak')" class="px-3.5 py-1.5 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 text-purple-300 border border-purple-500/40 font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm" data-tooltip="Simulate Hingna industrial runoff & mobile fogging dispatch">
-              🏥 Hingna Vector Alert
+            <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Hingna industrial runoff & mobile fogging squad dispatch">
+              <span>🏥</span> Hingna Vector Alert
             </button>
-            <button onclick="quickWaterSpike()" class="px-3.5 py-1.5 rounded-xl bg-cyan-600/30 hover:bg-cyan-600/50 text-cyan-300 border border-cyan-500/40 font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm" data-tooltip="Spike ESP32 water level reading past 80cm threshold">
-              💧 Spike ESP32 Level (+65cm)
+            <button onclick="quickWaterSpike()" class="btn-sim-spike px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
+              <span>💧</span> Spike ESP32 Level (+65cm)
             </button>
-            <button onclick="quickResetSensors()" class="px-3.5 py-1.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border border-emerald-500/40 font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
-              🛡️ Reset Baseline
+            <button onclick="quickResetSensors()" class="btn-sim-reset px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
+              <span>🛡️</span> Reset Baseline
             </button>
           </div>
         </div>
@@ -390,19 +390,31 @@
       <!-- ======================================================================== -->
       <section id="tab-aichat" class="tab-content hidden space-y-5">
         
-        <!-- Header Incident Status Bar (Matching Screenshot 3) -->
-        <div class="bg-[#111a28] border border-white/10 text-white p-3.5 px-6 rounded-2xl flex flex-wrap items-center justify-between gap-4 font-mono text-xs shadow-xl">
-          <div class="flex items-center gap-4">
-            <span class="text-slate-300 font-bold">SIMULATION ID: <strong class="text-cyan-400">SC-NAGPUR-FLOOD-2026</strong></span>
+        <!-- Header Incident Status & Scenario Triggers Bar -->
+        <div class="glass-card p-3.5 px-5 flex flex-wrap items-center justify-between gap-3 border border-white/15 bg-[#101926]/90 shadow-xl rounded-2xl">
+          <div class="flex items-center gap-3 font-mono text-xs">
+            <span class="text-slate-300 font-bold">SIMULATION: <strong class="text-cyan-400">SC-NAGPUR-FLOOD-2026</strong></span>
             <span class="text-slate-500">|</span>
             <span class="font-bold text-slate-300">STATUS: <span class="text-red-400 animate-pulse font-extrabold">ACTIVE INCIDENT</span></span>
-            <span class="text-slate-500">|</span>
-            <span class="text-slate-300 font-bold">TIMESTAMP: <strong class="text-slate-100" id="sim-timestamp">14:32:05 IST</strong></span>
           </div>
           
-          <button onclick="triggerSimulation()" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition font-sans text-xs flex items-center gap-1.5 shadow-md shadow-blue-600/30">
-            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Run Scenario
-          </button>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <button onclick="triggerSimulation()" class="btn-sim-flood px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
+              <span>⚡</span> Flood & Detour
+            </button>
+            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Sitabuldi interchange culvert overflow">
+              <span>🚦</span> Traffic Snarl
+            </button>
+            <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Hingna industrial runoff & fogging">
+              <span>🏥</span> Vector Alert
+            </button>
+            <button onclick="quickWaterSpike()" class="btn-sim-spike px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Spike ESP32 water reading (+65cm)">
+              <span>💧</span> Spike Water (+65cm)
+            </button>
+            <button onclick="quickResetSensors()" class="btn-sim-reset px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Restore all telemetry to optimal baseline">
+              <span>🛡️</span> Reset
+            </button>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -623,7 +635,30 @@
             <h3 class="text-xl font-extrabold text-white mt-1">IoT Telemetry & Squad Dispatch Analytics</h3>
           </div>
           <div class="text-xs font-mono font-bold text-slate-400">
-            Jun 13, 2026, 12:30 PM
+            Nagpur IoT Mesh • 5s Polling
+          </div>
+        </div>
+
+        <!-- Scenario Simulators Bar for Analytics -->
+        <div class="glass-card p-3.5 px-5 flex flex-wrap items-center justify-between gap-3 border border-white/15 bg-[#101926]/90 shadow-xl rounded-2xl">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+            <span class="uppercase tracking-wider text-[11px] text-cyan-300 font-extrabold">⚡ Telemetry Simulators:</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <button onclick="triggerSimulation()" class="btn-sim-flood px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
+              <span>⚡</span> Flood & Detour
+            </button>
+            <button onclick="quickWaterSpike()" class="btn-sim-spike px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
+              <span>💧</span> Spike Water (+65cm)
+            </button>
+            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl & drainage squad">
+              <span>🚦</span> Traffic Snarl
+            </button>
+            <button onclick="quickResetSensors()" class="btn-sim-reset px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
+              <span>🛡️</span> Reset Baseline
+            </button>
           </div>
         </div>
 
@@ -941,13 +976,41 @@
       <!-- ======================================================================== -->
       <section id="tab-debate" class="tab-content hidden space-y-6">
         <div class="glass-card p-6 space-y-4">
-          <div class="flex items-center justify-between pb-4 border-b border-white/10">
-            <h3 class="font-extrabold text-base text-white flex items-center gap-2">
-              <i data-lucide="radio" class="w-5 h-5 text-purple-400"></i> Autonomous Multi-Agent AI Debate Room
-            </h3>
-            <button onclick="triggerAutoAIDebate()" class="py-2 px-4 btn-cyber-primary font-bold text-xs flex items-center gap-2">
-              <i data-lucide="play" class="w-4 h-4"></i> Run 1 Debate Cycle
-            </button>
+          <div class="flex flex-wrap items-center justify-between pb-4 border-b border-white/10 gap-3">
+            <div>
+              <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+                <i data-lucide="radio" class="w-5 h-5 text-purple-400"></i> Autonomous Multi-Agent AI Debate Room
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">Multi-Persona Consensus Negotiation • Zone 1, 2, 3 & Admin Orchestrator</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="triggerAutoAIDebate()" class="py-2.5 px-4 btn-cyber-primary font-bold text-xs flex items-center gap-2">
+                <i data-lucide="play" class="w-4 h-4"></i> Run 1 Debate Cycle
+              </button>
+            </div>
+          </div>
+
+          <!-- Scenario Simulators Bar for Debate Room -->
+          <div class="glass-card p-3 px-4 flex flex-wrap items-center justify-between gap-2 border border-white/15 bg-[#101926]/90 rounded-xl">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+              <span class="uppercase tracking-wider text-[11px] text-purple-300 font-extrabold">Inject Scenario into Debate:</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 text-xs">
+              <button onclick="triggerSimulation()" class="btn-sim-flood px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood in debate">
+                <span>⚡</span> Flood Scenario
+              </button>
+              <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl in debate">
+                <span>🚦</span> Traffic Scenario
+              </button>
+              <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Hingna vector outbreak in debate">
+                <span>🏥</span> Vector Scenario
+              </button>
+              <button onclick="quickResetSensors()" class="btn-sim-reset px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Reset debate context">
+                <span>🛡️</span> Reset
+              </button>
+            </div>
           </div>
           <div id="debate-stream" class="h-[450px] overflow-y-auto space-y-3 font-sans text-xs bg-[#090f17] p-4 rounded-xl border border-white/10">
             <div class="text-center text-slate-500 py-12">Click 'Run 1 Debate Cycle' to initiate multi-agent AI discussion.</div>
@@ -1143,7 +1206,7 @@
     </div>
   </div>
 
-  <!-- App Javascript -->
-  <script src="app.js"></script>
+  <!-- App Javascript with Cache-Buster -->
+  <script src="app.js?v=2026.3"></script>
 </body>
 </html>
