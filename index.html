@@ -63,20 +63,20 @@
   <!-- ============================================================================== -->
   <!-- 1. LEFT SIDEBAR NAVIGATION MENU (Matching Screenshots 1, 2, 3) -->
   <!-- ============================================================================== -->
-  <aside class="w-64 bg-[#0e1622]/95 backdrop-blur-2xl border-r border-white/10 flex flex-col justify-between shrink-0 z-30 shadow-2xl">
-    <div class="p-5 flex flex-col h-full">
+  <aside class="w-60 bg-[#0e1622]/95 backdrop-blur-2xl border-r border-white/10 flex flex-col justify-between shrink-0 z-30 shadow-2xl">
+    <div class="p-4 flex flex-col h-full">
       
       <!-- Brand Header with Official NMC SynthCity Logo -->
-      <div class="flex items-center gap-3 pb-6 border-b border-white/10">
-        <img src="assets/images/synthcity_nmc_logo.jpg" alt="NMC SynthCity Logo" class="w-12 h-12 rounded-2xl object-cover shadow-lg shadow-cyan-500/25 shrink-0 border border-amber-500/40">
+      <div class="flex items-center gap-2.5 pb-4 border-b border-white/10">
+        <img src="assets/images/synthcity_nmc_logo.jpg" alt="NMC SynthCity Logo" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-cyan-500/25 shrink-0 border border-amber-500/40">
         <div>
-          <h1 class="font-extrabold text-lg tracking-tight text-white leading-tight">Synth<span class="text-cyan-400">City</span></h1>
-          <p class="text-[10px] font-bold tracking-wider text-amber-400 uppercase">NMC Smart City C2</p>
+          <h1 class="font-extrabold text-base tracking-tight text-white leading-tight">Synth<span class="text-cyan-400">City</span></h1>
+          <p class="text-[9px] font-bold tracking-wider text-amber-400 uppercase">NMC Smart City C2</p>
         </div>
       </div>
 
       <!-- Navigation Links -->
-      <nav class="mt-5 space-y-1.5 flex-1 overflow-y-auto pr-1">
+      <nav class="mt-4 space-y-1 flex-1 overflow-y-auto pr-1">
         <button onclick="switchTab('overview')" id="nav-overview" class="nav-btn active" data-tooltip="Dashboard Overview: Live GIS Map & Incident Matrix">
           <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
           <span>Dashboard</span>
@@ -84,7 +84,7 @@
         <button onclick="switchTab('aichat')" id="nav-aichat" class="nav-btn" data-tooltip="Civic Intelligence: Multi-Agent AI Swarm & Dialogue Feed">
           <i data-lucide="cpu" class="w-4 h-4"></i>
           <span>Civic Intelligence</span>
-          <span class="ml-auto bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[10px] font-bold px-2 py-0.5 rounded-full">LIVE</span>
+          <span class="ml-auto bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[9px] font-bold px-1.5 py-0.5 rounded-full">LIVE</span>
         </button>
         <button onclick="switchTab('map')" id="nav-map" class="nav-btn" data-tooltip="Geospatial Mapping: 3 Nagpur Geofenced Zones & Points">
           <i data-lucide="map-pin" class="w-4 h-4"></i>
@@ -113,17 +113,17 @@
       </nav>
 
       <!-- Bottom User Profile Footer: Municipal Commissioner & CEO, NMC -->
-      <div class="pt-4 border-t border-white/10 flex items-center justify-between" data-tooltip="Commanding Officer: Dr. Vipin Itankar, IAS (Municipal Commissioner & CEO, NMC)">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-600 to-cyan-600 flex items-center justify-center font-extrabold text-xs text-white shadow-md border border-amber-400/40">
+      <div class="pt-3 border-t border-white/10 flex items-center justify-between" data-tooltip="Commanding Officer: Dr. Vipin Itankar, IAS (Municipal Commissioner & CEO, NMC)">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-600 via-orange-600 to-cyan-600 flex items-center justify-center font-extrabold text-[10px] text-white shadow-md border border-amber-400/40 shrink-0">
             VI
           </div>
-          <div>
-            <h4 class="font-extrabold text-xs text-white leading-tight truncate max-w-[130px]">Dr. Vipin Itankar</h4>
-            <p class="text-[10px] font-semibold text-amber-300 truncate max-w-[130px]">Municipal Commissioner</p>
+          <div class="min-w-0">
+            <h4 class="font-extrabold text-[11px] text-white leading-tight truncate max-w-[125px]">Dr. Vipin Itankar</h4>
+            <p class="text-[9px] font-semibold text-amber-300 truncate max-w-[125px]">Municipal Commissioner</p>
           </div>
         </div>
-        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" title="CEO Active"></div>
+        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" title="CEO Active"></div>
       </div>
     </div>
   </aside>
@@ -134,135 +134,135 @@
   <main class="flex-1 flex flex-col min-w-0 bg-transparent overflow-hidden relative">
     
     <!-- Top Header Bar (Matching Screenshot 1 & 2) -->
-    <header class="h-16 bg-[#0e1622]/80 backdrop-blur-xl border-b border-white/10 px-6 flex items-center justify-between z-20 shrink-0">
+    <header class="h-14 bg-[#0e1622]/80 backdrop-blur-xl border-b border-white/10 px-4 md:px-5 flex items-center justify-between z-20 shrink-0">
       <div class="flex items-center gap-3">
         <div>
-          <h2 id="page-title" class="text-lg font-extrabold text-white tracking-tight leading-none">Dashboard</h2>
-          <p class="text-[11px] font-bold text-slate-400 mt-1">Nagpur Municipal Corporation (NMC) Civic Intelligence C2</p>
+          <h2 id="page-title" class="text-base font-extrabold text-white tracking-tight leading-none">Dashboard</h2>
+          <p class="text-[10px] font-bold text-slate-400 mt-0.5">Nagpur Municipal Corporation (NMC) Civic Intelligence C2</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-3 text-xs font-semibold text-slate-300">
+      <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
         <!-- Live Weather Widget (Matching Screenshot 1) -->
-        <div class="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-xl text-slate-200" data-tooltip="Open-Meteo Live API: 32°C Nagpur Coordinates">
-          <span class="text-base">⛅</span>
-          <span class="font-extrabold text-white">32°C</span>
-          <span class="text-slate-400 text-[11px]">Cloudy, Humid</span>
+        <div class="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 px-2.5 py-1 rounded-xl text-slate-200" data-tooltip="Open-Meteo Live API: 32°C Nagpur Coordinates">
+          <span class="text-sm">⛅</span>
+          <span class="font-extrabold text-white text-xs">32°C</span>
+          <span class="text-slate-400 text-[10px]">Cloudy</span>
         </div>
 
         <!-- Incident Badges (Matching Screenshot 1) -->
-        <div class="hidden md:flex items-center gap-2">
-          <span class="px-3 py-1 rounded-full bg-blue-600/30 text-blue-300 border border-blue-500/40 font-bold text-[11px] flex items-center gap-1.5 shadow-sm" data-tooltip="3 Active Flood Hazard Incidents">
-            Flooding <span class="bg-blue-600 text-white rounded-full px-1.5 text-[10px]">3</span>
+        <div class="hidden md:flex items-center gap-1.5">
+          <span class="px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-300 border border-blue-500/40 font-bold text-[10px] flex items-center gap-1 shadow-sm" data-tooltip="3 Active Flood Hazard Incidents">
+            Flooding <span class="bg-blue-600 text-white rounded-full px-1 text-[9px]">3</span>
           </span>
-          <span class="px-3 py-1 rounded-full bg-red-600/30 text-red-300 border border-red-500/40 font-bold text-[11px] flex items-center gap-1.5 shadow-sm" data-tooltip="1 Active Fire Incident">
-            Fire <span class="bg-red-600 text-white rounded-full px-1.5 text-[10px]">1</span>
+          <span class="px-2 py-0.5 rounded-full bg-red-600/30 text-red-300 border border-red-500/40 font-bold text-[10px] flex items-center gap-1 shadow-sm" data-tooltip="1 Active Fire Incident">
+            Fire <span class="bg-red-600 text-white rounded-full px-1 text-[9px]">1</span>
           </span>
-          <span class="px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 border border-amber-500/40 font-bold text-[11px] flex items-center gap-1" data-tooltip="1 High Temperature Warning">
+          <span class="px-1.5 py-0.5 rounded-full bg-amber-600/30 text-amber-300 border border-amber-500/40 font-bold text-[10px] flex items-center gap-0.5" data-tooltip="1 High Temperature Warning">
             🔥 1
           </span>
         </div>
 
         <!-- Notification Bell with Red Badge (Matching Screenshot 1) -->
-        <div class="relative p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition" data-tooltip="1 Unread High-Priority Alert">
+        <div class="relative p-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition" data-tooltip="1 Unread High-Priority Alert">
           <i data-lucide="bell" class="w-4 h-4 text-slate-300"></i>
-          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-600 text-white text-[9px] font-extrabold rounded-full flex items-center justify-center">1</span>
+          <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-600 text-white text-[8px] font-extrabold rounded-full flex items-center justify-center">1</span>
         </div>
 
         <!-- User Avatar with Dropdown: Dr. Vipin Itankar, IAS -->
-        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition" data-tooltip="NMC Municipal Commissioner & CEO: Dr. Vipin Itankar, IAS">
-          <div class="w-6 h-6 rounded-full bg-gradient-to-r from-amber-500 to-cyan-500 text-white flex items-center justify-center text-[10px] font-extrabold">
+        <div class="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition" data-tooltip="NMC Municipal Commissioner & CEO: Dr. Vipin Itankar, IAS">
+          <div class="w-5 h-5 rounded-full bg-gradient-to-r from-amber-500 to-cyan-500 text-white flex items-center justify-center text-[9px] font-extrabold">
             VI
           </div>
-          <span class="text-xs font-bold text-slate-200 hidden md:inline">Dr. Vipin Itankar</span>
-          <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+          <span class="text-[11px] font-bold text-slate-200 hidden md:inline">Dr. Vipin Itankar</span>
+          <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
         </div>
 
         <!-- ⚡ TRIGGER SIMULATION BUTTON (Matching Screenshot 1) -->
-        <button onclick="triggerSimulation()" class="btn-cyber-glow px-4 py-2 rounded-xl text-xs flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-600/40" data-tooltip="Click to trigger live Nag River Flood & Detour simulation scenario">
-          <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
-          <span class="tracking-wide uppercase">TRIGGER SIMULATION</span>
+        <button onclick="triggerSimulation()" class="btn-cyber-glow px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-lg shadow-blue-600/40" data-tooltip="Click to trigger live Nag River Flood & Detour simulation scenario">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i>
+          <span class="tracking-wide uppercase text-[10px]">TRIGGER SIMULATION</span>
         </button>
 
         <!-- Live Clock -->
-        <div class="hidden xl:flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl font-mono text-cyan-300" data-tooltip="Live Indian Standard Time (IST)">
-          <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i>
+        <div class="hidden xl:flex items-center gap-1.5 bg-white/5 border border-white/10 px-2 py-1 rounded-xl font-mono text-[10px] text-cyan-300" data-tooltip="Live Indian Standard Time (IST)">
+          <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i>
           <span id="live-clock-display">14:32:05 IST</span>
         </div>
       </div>
     </header>
 
     <!-- TAB CONTENTS CONTAINER -->
-    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+    <div class="flex-1 overflow-y-auto p-3.5 md:p-4 space-y-3.5">
 
       <!-- ======================================================================== -->
       <!-- TAB 1: OVERVIEW & INTERACTIVE MAP (Exact Match with Screenshot 1) -->
       <!-- ======================================================================== -->
-      <section id="tab-overview" class="tab-content block space-y-6">
+      <section id="tab-overview" class="tab-content block space-y-3.5">
 
         <!-- INTERACTIVE QUICK ACTION & SCENARIO TRIGGERS BAR -->
-        <div class="glass-card p-3.5 px-5 flex flex-wrap items-center justify-between gap-3 border border-white/15 bg-[#101926]/90 shadow-xl rounded-2xl">
+        <div class="glass-card p-2.5 px-3.5 flex flex-wrap items-center justify-between gap-2 border border-white/15 bg-[#101926]/90 shadow-xl rounded-xl">
           <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
-            <span class="uppercase tracking-wider text-[11px] text-cyan-300 font-extrabold">⚡ Scenario Simulators:</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span class="uppercase tracking-wider text-[10px] text-cyan-300 font-extrabold">⚡ Scenario Simulators:</span>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-xs">
-            <button onclick="triggerSimulation()" class="btn-sim-flood px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
-              <span>⚡</span> Flash Flood & Detour
+          <div class="flex flex-wrap items-center gap-1.5 text-xs">
+            <button onclick="triggerSimulation()" class="btn-sim-flood px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
+              <span>⚡</span> Flood & Detour
             </button>
-            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Sitabuldi interchange culvert overflow & VMS detour">
-              <span>🚦</span> Sitabuldi Traffic Snarl
+            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Sitabuldi interchange culvert overflow & VMS detour">
+              <span>🚦</span> Sitabuldi Snarl
             </button>
-            <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Hingna industrial runoff & mobile fogging squad dispatch">
-              <span>🏥</span> Hingna Vector Alert
+            <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Hingna industrial runoff & mobile fogging squad dispatch">
+              <span>🏥</span> Vector Alert
             </button>
-            <button onclick="quickWaterSpike()" class="btn-sim-spike px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
-              <span>💧</span> Spike ESP32 Level (+65cm)
+            <button onclick="quickWaterSpike()" class="btn-sim-spike px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
+              <span>💧</span> Spike Water (+65cm)
             </button>
-            <button onclick="quickResetSensors()" class="btn-sim-reset px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
-              <span>🛡️</span> Reset Baseline
+            <button onclick="quickResetSensors()" class="btn-sim-reset px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
+              <span>🛡️</span> Reset
             </button>
           </div>
         </div>
 
         <!-- Top Full Interactive GIS Map Card with Circular Geofences & Legend -->
-        <div class="glass-card p-0 rounded-2xl overflow-hidden border border-white/15 shadow-2xl relative" data-tooltip="Nagpur Metropolitan GIS: Interactive 3-Zone Geofences & Sensor Telemetry">
+        <div class="glass-card p-0 rounded-xl overflow-hidden border border-white/15 shadow-2xl relative" data-tooltip="Nagpur Metropolitan GIS: Interactive 3-Zone Geofences & Sensor Telemetry">
           
           <!-- Map Header Tool Bar -->
-          <div class="p-3.5 px-5 bg-[#131d2b]/90 border-b border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <i data-lucide="map" class="w-4 h-4 text-cyan-400"></i>
-              <h3 class="font-extrabold text-sm text-white">Nagpur Metropolitan Geofence Matrix</h3>
+          <div class="p-2 px-3.5 bg-[#131d2b]/90 border-b border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <h3 class="font-extrabold text-xs text-white">Nagpur Metropolitan Geofence Matrix</h3>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="toggleMapTheme()" class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 transition flex items-center gap-1.5" data-tooltip="Toggle Map Style: Carto Voyager / OpenStreetMap / Dark">
-                <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i>
+              <button onclick="toggleMapTheme()" class="px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-semibold text-slate-300 transition flex items-center gap-1" data-tooltip="Toggle Map Style: Carto Voyager / OpenStreetMap / Dark">
+                <i data-lucide="layers" class="w-3 h-3 text-indigo-400"></i>
                 <span id="theme-btn-text">Esri World Street</span>
               </button>
             </div>
           </div>
 
           <!-- Leaflet Map Container -->
-          <div class="w-full h-[500px] relative z-10 bg-[#0b111a]">
+          <div class="w-full h-[320px] xl:h-[350px] relative z-10 bg-[#0b111a]">
             <div id="overview-map" class="w-full h-full"></div>
             
             <!-- Floating Map Zone Legend Overlay (Matching Screenshot 1) -->
-            <div class="absolute bottom-4 left-4 z-[1000] bg-[#0e1622]/95 backdrop-blur-xl p-3.5 rounded-2xl border border-white/15 shadow-2xl text-xs font-sans space-y-2 max-w-[320px]">
-              <div class="flex items-center gap-2.5 cursor-pointer" data-tooltip="Zone 1 (Neer-Krishi): Kamptee barrage, Kanhan river & rural agriculture">
-                <span class="w-3.5 h-3.5 rounded-md bg-cyan-500 shadow-md shadow-cyan-500/50 shrink-0"></span>
-                <span class="font-extrabold text-slate-100">ZONE 1 - Cyan - NEER-KRISHI</span>
-                <span class="text-[10px] text-cyan-300 font-bold">(Water & Agriculture)</span>
+            <div class="absolute bottom-2.5 left-2.5 z-[1000] bg-[#0e1622]/95 backdrop-blur-xl p-2 rounded-lg border border-white/15 shadow-2xl text-[10px] font-sans space-y-1 max-w-[270px]">
+              <div class="flex items-center gap-1.5 cursor-pointer" data-tooltip="Zone 1 (Neer-Krishi): Kamptee barrage, Kanhan river & rural agriculture">
+                <span class="w-2.5 h-2.5 rounded-sm bg-cyan-500 shadow-md shadow-cyan-500/50 shrink-0"></span>
+                <span class="font-extrabold text-slate-100 text-[10px]">ZONE 1 - Cyan - NEER-KRISHI</span>
+                <span class="text-[8px] text-cyan-300 font-bold">(Hydro)</span>
               </div>
-              <div class="flex items-center gap-2.5 cursor-pointer" data-tooltip="Zone 2 (Nagari-Tantra): Sitabuldi metro hub, open plot garbage & traffic">
-                <span class="w-3.5 h-3.5 rounded-md bg-amber-500 shadow-md shadow-amber-500/50 shrink-0"></span>
-                <span class="font-extrabold text-slate-100">ZONE 2 - Amber - NAGARI-TANTRA</span>
-                <span class="text-[10px] text-amber-300 font-bold">(Urban Planning)</span>
+              <div class="flex items-center gap-1.5 cursor-pointer" data-tooltip="Zone 2 (Nagari-Tantra): Sitabuldi metro hub, open plot garbage & traffic">
+                <span class="w-2.5 h-2.5 rounded-sm bg-amber-500 shadow-md shadow-amber-500/50 shrink-0"></span>
+                <span class="font-extrabold text-slate-100 text-[10px]">ZONE 2 - Amber - NAGARI-TANTRA</span>
+                <span class="text-[8px] text-amber-300 font-bold">(Urban)</span>
               </div>
-              <div class="flex items-center gap-2.5 cursor-pointer" data-tooltip="Zone 3 (Swasthya-Raksha): Hingna MIDC, MIHAN IT Park & Ambazari Lake">
-                <span class="w-3.5 h-3.5 rounded-md bg-purple-500 shadow-md shadow-purple-500/50 shrink-0"></span>
-                <span class="font-extrabold text-slate-100">ZONE 3 - Purple - SWASTHYA-RAKSHA</span>
-                <span class="text-[10px] text-purple-300 font-bold">(Healthcare)</span>
+              <div class="flex items-center gap-1.5 cursor-pointer" data-tooltip="Zone 3 (Swasthya-Raksha): Hingna MIDC, MIHAN IT Park & Ambazari Lake">
+                <span class="w-2.5 h-2.5 rounded-sm bg-purple-500 shadow-md shadow-purple-500/50 shrink-0"></span>
+                <span class="font-extrabold text-slate-100 text-[10px]">ZONE 3 - Purple - SWASTHYA-RAKSHA</span>
+                <span class="text-[8px] text-purple-300 font-bold">(Health)</span>
               </div>
             </div>
           </div>
@@ -409,13 +409,13 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           
           <!-- LEFT/CENTER 2 COLS: SIMULATION CHAT & INCIDENT FEED (Matching Screenshot 3) -->
-          <div class="lg:col-span-2 glass-card p-0 rounded-2xl overflow-hidden flex flex-col h-[650px] border border-white/15">
+          <div class="lg:col-span-2 glass-card p-0 rounded-2xl overflow-hidden flex flex-col h-[calc(100vh-145px)] min-h-[500px] border border-white/15">
             
             <!-- Chat Header -->
-            <div class="p-4 px-6 bg-[#131d2b] border-b border-white/10 flex items-center justify-between">
+            <div class="p-3.5 px-5 bg-[#131d2b] border-b border-white/10 flex items-center justify-between">
               <h3 class="font-extrabold text-sm text-white flex items-center gap-2">
                 <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i> Simulation Chat & Incident Feed
               </h3>
@@ -426,7 +426,7 @@
             </div>
 
             <!-- Messages Stream (Matching Exact Screenshots 3 Style) -->
-            <div id="ai-chat-history" class="flex-1 overflow-y-auto p-5 space-y-4 bg-[#0d1520]">
+            <div id="ai-chat-history" class="flex-1 overflow-y-auto p-4 space-y-3.5 bg-[#0d1520]">
               
               <!-- Message 1: Synth-Pradhan -->
               <div class="sim-msg-row">
@@ -524,13 +524,13 @@
           </div>
 
           <!-- RIGHT 1 COL: 3 WIDGETS (Matching Screenshot 3) -->
-          <div class="space-y-4 flex flex-col justify-between">
+          <div class="h-[calc(100vh-145px)] min-h-[500px] overflow-y-auto space-y-3 pr-1 flex flex-col justify-between">
             
             <!-- Widget 1: Agent Status (Matching Screenshot 3) -->
-            <div class="glass-card p-4 space-y-3">
-              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+            <div class="glass-card p-3.5 space-y-2.5">
+              <div class="flex items-center justify-between pb-1.5 border-b border-white/10">
                 <h4 class="font-extrabold text-xs text-white">Agent Status</h4>
-                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
+                <i data-lucide="more-horizontal" class="w-3.5 h-3.5 text-slate-400"></i>
               </div>
 
               <div class="space-y-2 text-xs">
@@ -579,29 +579,29 @@
             </div>
 
             <!-- Widget 2: Incident Map Preview (Matching Screenshot 3) -->
-            <div class="glass-card p-4 space-y-2.5">
-              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+            <div class="glass-card p-3 space-y-2">
+              <div class="flex items-center justify-between pb-1.5 border-b border-white/10">
                 <h4 class="font-extrabold text-xs text-white">Incident Map</h4>
-                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
+                <i data-lucide="more-horizontal" class="w-3.5 h-3.5 text-slate-400"></i>
               </div>
-              <div class="w-full h-32 rounded-xl bg-[#090f17] border border-white/10 relative flex items-center justify-center overflow-hidden">
+              <div class="w-full h-24 rounded-xl bg-[#090f17] border border-white/10 relative flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:12px_12px]"></div>
-                <div class="relative z-10 text-center px-3 py-1.5 rounded-lg bg-red-600/90 text-white font-extrabold text-[11px] shadow-lg flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                <div class="relative z-10 text-center px-2.5 py-1 rounded-lg bg-red-600/90 text-white font-extrabold text-[10px] shadow-lg flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
                   ⚠️ Nag River bridge
                 </div>
               </div>
             </div>
 
             <!-- Widget 3: Code Snippet Card (Matching Screenshot 3) -->
-            <div class="glass-card p-4 space-y-2 bg-[#090f17]">
-              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+            <div class="glass-card p-3 space-y-1.5 bg-[#090f17]">
+              <div class="flex items-center justify-between pb-1 border-b border-white/10">
                 <h4 class="font-extrabold text-xs text-white">Code Snippet</h4>
-                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
+                <i data-lucide="more-horizontal" class="w-3.5 h-3.5 text-slate-400"></i>
               </div>
-              <div class="text-[11px] text-slate-400 font-mono space-y-1">
+              <div class="text-[10px] text-slate-400 font-mono space-y-1">
                 <p class="text-slate-300 font-semibold">Protocol Snippet: Dewatering Activation</p>
-                <pre class="bg-black/40 p-3 rounded-lg text-cyan-300 overflow-x-auto text-[10px]"><code>def agg_arsenit():
+                <pre class="bg-black/40 p-2.5 rounded-lg text-cyan-300 overflow-x-auto text-[10px]"><code>def agg_arsenit():
     dispatch_unit('DEWATER_1', location)
     # The return in pseudo-code
     ...
@@ -618,85 +618,85 @@
       <!-- ======================================================================== -->
       <!-- TAB 3: ANALYTICS & IOT TELEMETRY (Exact Match with Screenshot 2) -->
       <!-- ======================================================================== -->
-      <section id="tab-analytics" class="tab-content hidden space-y-6">
+      <section id="tab-analytics" class="tab-content hidden space-y-3.5">
         
         <!-- Header & Breadcrumb (Matching Screenshot 2) -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
           <div>
-            <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">SYNTHCITY | Analytics Dashboard</div>
-            <h3 class="text-xl font-extrabold text-white mt-1">IoT Telemetry & Squad Dispatch Analytics</h3>
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">SYNTHCITY | Analytics Dashboard</div>
+            <h3 class="text-base font-extrabold text-white">IoT Telemetry & Squad Dispatch Analytics</h3>
           </div>
-          <div class="text-xs font-mono font-bold text-slate-400">
+          <div class="text-[11px] font-mono font-bold text-slate-400">
             Nagpur IoT Mesh • 5s Polling
           </div>
         </div>
 
         <!-- Scenario Simulators Bar for Analytics -->
-        <div class="glass-card p-3.5 px-5 flex flex-wrap items-center justify-between gap-3 border border-white/15 bg-[#101926]/90 shadow-xl rounded-2xl">
+        <div class="glass-card p-2 px-3.5 flex flex-wrap items-center justify-between gap-2 border border-white/15 bg-[#101926]/90 shadow-xl rounded-xl">
           <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
-            <span class="uppercase tracking-wider text-[11px] text-cyan-300 font-extrabold">⚡ Telemetry Simulators:</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span class="uppercase tracking-wider text-[10px] text-cyan-300 font-extrabold">⚡ Telemetry Simulators:</span>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-xs">
-            <button onclick="triggerSimulation()" class="btn-sim-flood px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
+          <div class="flex flex-wrap items-center gap-1.5 text-xs">
+            <button onclick="triggerSimulation()" class="btn-sim-flood px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Nag River Flash Flood & Outer Ring Road Detour">
               <span>⚡</span> Flood & Detour
             </button>
-            <button onclick="quickWaterSpike()" class="btn-sim-spike px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
+            <button onclick="quickWaterSpike()" class="btn-sim-spike px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Spike ESP32 water level reading past 80cm critical threshold">
               <span>💧</span> Spike Water (+65cm)
             </button>
-            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl & drainage squad">
+            <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl & drainage squad">
               <span>🚦</span> Traffic Snarl
             </button>
-            <button onclick="quickResetSensors()" class="btn-sim-reset px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
+            <button onclick="quickResetSensors()" class="btn-sim-reset px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Restore all Nagpur sensor telemetry to optimal baseline">
               <span>🛡️</span> Reset Baseline
             </button>
           </div>
         </div>
 
         <!-- 4 Top KPI Stat Cards (Matching Screenshot 2) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
           
           <!-- Card 1: Total Sensors -->
-          <div class="kpi-card" data-tooltip="Total Sensors: 1,842 IoT ultrasonic, soil moisture, and acoustic nodes online">
+          <div class="kpi-card p-3 rounded-xl" data-tooltip="Total Sensors: 1,842 IoT ultrasonic, soil moisture, and acoustic nodes online">
             <div>
-              <p class="text-xs font-bold text-slate-400">Total Sensors</p>
-              <h4 class="kpi-number mt-1">1,842</h4>
+              <p class="text-[11px] font-bold text-slate-400">Total Sensors</p>
+              <h4 class="kpi-number text-xl mt-0.5">1,842</h4>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-base">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">
               ((•))
             </div>
           </div>
 
           <!-- Card 2: Active Squads -->
-          <div class="kpi-card" data-tooltip="Active Squads: 47 municipal dewatering, fogging, and repair units deployed">
+          <div class="kpi-card p-3 rounded-xl" data-tooltip="Active Squads: 47 municipal dewatering, fogging, and repair units deployed">
             <div>
-              <p class="text-xs font-bold text-slate-400">Active Squads</p>
-              <h4 class="kpi-number mt-1">47</h4>
+              <p class="text-[11px] font-bold text-slate-400">Active Squads</p>
+              <h4 class="kpi-number text-xl mt-0.5">47</h4>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-base">
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm">
               👥
             </div>
           </div>
 
           <!-- Card 3: Incidents Today -->
-          <div class="kpi-card" data-tooltip="Incidents Today: 38 civic issues detected and managed in last 24h">
+          <div class="kpi-card p-3 rounded-xl" data-tooltip="Incidents Today: 38 civic issues detected and managed in last 24h">
             <div>
-              <p class="text-xs font-bold text-slate-400">Incidents Today</p>
-              <h4 class="kpi-number mt-1">38</h4>
+              <p class="text-[11px] font-bold text-slate-400">Incidents Today</p>
+              <h4 class="kpi-number text-xl mt-0.5">38</h4>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm">
               ⚠️
             </div>
           </div>
 
           <!-- Card 4: System Status -->
-          <div class="kpi-card" data-tooltip="System Status: All 3 Zone AIs, ESP32 IoT Nodes & Failover Cascade Operating Optimally">
+          <div class="kpi-card p-3 rounded-xl" data-tooltip="System Status: All 3 Zone AIs, ESP32 IoT Nodes & Failover Cascade Operating Optimally">
             <div>
-              <p class="text-xs font-bold text-slate-400">System Status</p>
-              <h4 class="kpi-number text-emerald-400 mt-1">Optimal</h4>
+              <p class="text-[11px] font-bold text-slate-400">System Status</p>
+              <h4 class="kpi-number text-xl text-emerald-400 mt-0.5">Optimal</h4>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-base">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm">
               🛡️
             </div>
           </div>
@@ -704,16 +704,16 @@
         </div>
 
         <!-- 2 Main Charts Grid (Matching Screenshot 2) -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3.5">
           
           <!-- Left Chart: ESP32 Ultrasonic Sensor Water Level (24h) | Zone 4 - Metro (2 cols) -->
-          <div class="lg:col-span-2 glass-card p-5 flex flex-col justify-between h-[380px]" data-tooltip="ESP32 Ultrasonic Sensor: Dual-peak 24h water level curve with 80cm flood threshold">
-            <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-2">
+          <div class="lg:col-span-2 glass-card p-3.5 flex flex-col justify-between h-[250px] rounded-xl" data-tooltip="ESP32 Ultrasonic Sensor: Dual-peak 24h water level curve with 80cm flood threshold">
+            <div class="flex items-center justify-between pb-2 border-b border-white/10 mb-1">
               <div>
-                <h4 class="font-extrabold text-sm text-white">ESP32 Ultrasonic Sensor Water Level (24h) | Zone 4 - Metro</h4>
+                <h4 class="font-extrabold text-xs text-white">ESP32 Ultrasonic Sensor Water Level (24h) | Zone 4 - Metro</h4>
               </div>
-              <div class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-cyan-400 flex items-center gap-1.5" data-tooltip="Live 5-second polling interval">
-                <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Real-time ⌄
+              <div class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] font-semibold text-cyan-400 flex items-center gap-1" data-tooltip="Live 5-second polling interval">
+                <i data-lucide="trending-up" class="w-3 h-3"></i> Real-time ⌄
               </div>
             </div>
 
@@ -724,10 +724,10 @@
           </div>
 
           <!-- Right Chart: Civic Incidents Resolved per Zone (Last 24h) (1 col) -->
-          <div class="glass-card p-5 flex flex-col justify-between h-[380px]" data-tooltip="Civic Resolution Metric: 154 work orders resolved by municipal squads today">
-            <div class="pb-3 border-b border-white/10 mb-2">
-              <h4 class="font-extrabold text-sm text-white">Civic Incidents Resolved per Zone</h4>
-              <p class="text-[11px] text-slate-400 font-semibold">(Last 24h) • <span class="text-cyan-400 font-bold">Total Resolved: 154</span></p>
+          <div class="glass-card p-3.5 flex flex-col justify-between h-[250px] rounded-xl" data-tooltip="Civic Resolution Metric: 154 work orders resolved by municipal squads today">
+            <div class="pb-2 border-b border-white/10 mb-1">
+              <h4 class="font-extrabold text-xs text-white">Civic Incidents Resolved per Zone</h4>
+              <p class="text-[10px] text-slate-400 font-semibold">(Last 24h) • <span class="text-cyan-400 font-bold">Total Resolved: 154</span></p>
             </div>
 
             <!-- Bar Chart Canvas -->
@@ -739,9 +739,9 @@
         </div>
 
         <!-- Active Municipal Field Squad Status Table (Matching Screenshot 2) -->
-        <div class="glass-card p-5 space-y-4" data-tooltip="Active Municipal Field Squads: Real-time GPS & work assignments">
-          <div class="flex items-center justify-between pb-3 border-b border-white/10">
-            <h4 class="font-extrabold text-sm text-white flex items-center gap-2">
+        <div class="glass-card p-4 space-y-3" data-tooltip="Active Municipal Field Squads: Real-time GPS & work assignments">
+          <div class="flex items-center justify-between pb-2 border-b border-white/10">
+            <h4 class="font-extrabold text-xs text-white flex items-center gap-2">
               <i data-lucide="truck" class="w-4 h-4 text-cyan-400"></i> Active Municipal Field Squad Status
             </h4>
             <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400 cursor-pointer"></i>
@@ -794,90 +794,90 @@
       <!-- ======================================================================== -->
       <!-- TAB 4: MAPPING FULLSCREEN -->
       <!-- ======================================================================== -->
-      <section id="tab-map" class="tab-content hidden space-y-6">
-        <div class="glass-card p-5 flex flex-col h-[650px]">
+      <section id="tab-map" class="tab-content hidden space-y-4">
+        <div class="glass-card p-4 flex flex-col h-[calc(100vh-145px)] min-h-[500px]">
           <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
-            <div class="flex items-center gap-3">
-              <i data-lucide="map" class="w-5 h-5 text-cyan-400"></i>
-              <h3 class="font-extrabold text-white">Nagpur Interactive GIS Map</h3>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="map" class="w-4 h-4 text-cyan-400"></i>
+              <h3 class="font-extrabold text-sm text-white">Nagpur Interactive GIS Map</h3>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-3 py-1 rounded-full font-bold">Zone 1: Neer-Krishi</span>
-              <span class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full font-bold">Zone 2: Nagari-Tantra</span>
-              <span class="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/40 px-3 py-1 rounded-full font-bold">Zone 3: Swasthya-Raksha</span>
+              <span class="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2.5 py-0.5 rounded-full font-bold">Zone 1: Neer-Krishi</span>
+              <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-0.5 rounded-full font-bold">Zone 2: Nagari-Tantra</span>
+              <span class="text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/40 px-2.5 py-0.5 rounded-full font-bold">Zone 3: Swasthya-Raksha</span>
             </div>
           </div>
-          <div id="full-map" class="w-full flex-1 rounded-xl overflow-hidden border border-white/10 z-10"></div>
+          <div id="full-map" class="w-full flex-1 rounded-xl overflow-hidden border border-white/10 z-10 bg-[#0b111a]"></div>
         </div>
       </section>
 
       <!-- ======================================================================== -->
       <!-- TAB 5: TELEGRAM & WORKERS C2 (WHATSAPP WEB UI CONSOLE) -->
       <!-- ======================================================================== -->
-      <section id="tab-comms" class="tab-content hidden space-y-6">
-        <div class="glass-card p-0 bg-[#0e1622] border border-white/15 rounded-2xl overflow-hidden flex h-[680px] shadow-2xl">
+      <section id="tab-comms" class="tab-content hidden space-y-4">
+        <div class="glass-card p-0 bg-[#0e1622] border border-white/15 rounded-2xl overflow-hidden flex h-[calc(100vh-145px)] min-h-[500px] shadow-2xl">
           
-          <!-- LEFT SIDEBAR: TELEGRAM CONTACTS & WORKERS (w-80) -->
-          <div class="w-80 bg-[#111a28] border-r border-white/10 flex flex-col shrink-0">
-            <div class="p-4 border-b border-white/10 flex items-center justify-between bg-[#131d2b]">
-              <h3 class="font-extrabold text-sm text-white flex items-center gap-2">
-                <i data-lucide="send" class="w-4 h-4 text-cyan-400"></i> Telegram Dispatcher
+          <!-- LEFT SIDEBAR: TELEGRAM CONTACTS & WORKERS (w-72 md:w-80) -->
+          <div class="w-72 md:w-80 bg-[#111a28] border-r border-white/10 flex flex-col shrink-0">
+            <div class="p-3.5 border-b border-white/10 flex items-center justify-between bg-[#131d2b]">
+              <h3 class="font-extrabold text-xs text-white flex items-center gap-2">
+                <i data-lucide="send" class="w-3.5 h-3.5 text-cyan-400"></i> Telegram Dispatcher
               </h3>
-              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold px-2.5 py-0.5 rounded-full">Bot Connected</span>
+              <span class="text-[9px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold px-2 py-0.5 rounded-full">Bot Connected</span>
             </div>
 
             <!-- Contacts List -->
-            <div class="p-3 space-y-2 flex-1 overflow-y-auto">
-              <button onclick="selectTelegramContact('worker1')" id="tg-contact-worker1" class="tg-contact-item active w-full text-left p-3 rounded-xl border border-cyan-500/50 bg-cyan-500/10 transition" data-tooltip="Worker 1 (U) - Kamptee Patrol Unit">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-md">
+            <div class="p-2.5 space-y-2 flex-1 overflow-y-auto">
+              <button onclick="selectTelegramContact('worker1')" id="tg-contact-worker1" class="tg-contact-item active w-full text-left p-2.5 rounded-xl border border-cyan-500/50 bg-cyan-500/10 transition" data-tooltip="Worker 1 (U) - Kamptee Patrol Unit">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-md">
                     👷
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between">
                       <h4 class="font-extrabold text-xs text-white truncate">Worker 1 (U)</h4>
-                      <span class="text-[10px] text-emerald-400 font-bold">ONLINE</span>
+                      <span class="text-[9px] text-emerald-400 font-bold">ONLINE</span>
                     </div>
-                    <p class="text-[11px] text-slate-400 truncate mt-0.5">Telegram ID: 8889864487 • Kamptee Patrol</p>
+                    <p class="text-[10px] text-slate-400 truncate mt-0.5">ID: 8889864487 • Kamptee Patrol</p>
                   </div>
                 </div>
               </button>
 
-              <button onclick="selectTelegramContact('worker2')" id="tg-contact-worker2" class="tg-contact-item w-full text-left p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition" data-tooltip="Worker 2 (Ritesh) - Admin Drainage Squad">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-md">
+              <button onclick="selectTelegramContact('worker2')" id="tg-contact-worker2" class="tg-contact-item w-full text-left p-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition" data-tooltip="Worker 2 (Ritesh) - Admin Drainage Squad">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-md">
                     👷
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between">
                       <h4 class="font-extrabold text-xs text-white truncate">Worker 2 (Ritesh Alone)</h4>
-                      <span class="text-[10px] text-teal-400 font-bold">STANDBY</span>
+                      <span class="text-[9px] text-teal-400 font-bold">STANDBY</span>
                     </div>
-                    <p class="text-[11px] text-slate-400 truncate mt-0.5">Admin Line • Sitabuldi Drainage</p>
+                    <p class="text-[10px] text-slate-400 truncate mt-0.5">Admin Line • Sitabuldi Drainage</p>
                   </div>
                 </div>
               </button>
 
-              <button onclick="selectTelegramContact('citizen')" id="tg-contact-citizen" class="tg-contact-item w-full text-left p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition" data-tooltip="Citizen Dhynendra - Zone 2 Direct Line">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-md">
+              <button onclick="selectTelegramContact('citizen')" id="tg-contact-citizen" class="tg-contact-item w-full text-left p-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition" data-tooltip="Citizen Dhynendra - Zone 2 Direct Line">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-md">
                     👤
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between">
                       <h4 class="font-extrabold text-xs text-white truncate">Dhynendra Gaurkar</h4>
-                      <span class="text-[10px] text-amber-400 font-bold">CITIZEN Z2</span>
+                      <span class="text-[9px] text-amber-400 font-bold">CITIZEN Z2</span>
                     </div>
-                    <p class="text-[11px] text-slate-400 truncate mt-0.5">Telegram ID: 5760246204 • Direct Line</p>
+                    <p class="text-[10px] text-slate-400 truncate mt-0.5">ID: 5760246204 • Direct Line</p>
                   </div>
                 </div>
               </button>
             </div>
 
             <!-- Quick Emergency Alert Trigger -->
-            <div class="p-3 border-t border-white/10 bg-[#131d2b]">
-              <button onclick="openEmergencyModal()" class="w-full py-2.5 px-3 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-500/40 font-extrabold text-xs transition flex items-center justify-center gap-2" data-tooltip="Broadcast emergency flood evacuation directive">
-                <i data-lucide="alert-triangle" class="w-4 h-4"></i> Emergency Evacuation Alert
+            <div class="p-2.5 border-t border-white/10 bg-[#131d2b]">
+              <button onclick="openEmergencyModal()" class="w-full py-2 px-3 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-500/40 font-extrabold text-xs transition flex items-center justify-center gap-2" data-tooltip="Broadcast emergency flood evacuation directive">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Emergency Evacuation Alert
               </button>
             </div>
           </div>
@@ -886,37 +886,37 @@
           <div class="flex-1 flex flex-col min-w-0 bg-[#0b141a]">
             
             <!-- Chat Header -->
-            <div class="p-3.5 px-5 bg-[#131d2b] border-b border-white/10 flex items-center justify-between shrink-0 shadow-md">
-              <div class="flex items-center gap-3">
-                <div id="tg-chat-avatar" class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow-md">
+            <div class="p-3 px-4 bg-[#131d2b] border-b border-white/10 flex items-center justify-between shrink-0 shadow-md">
+              <div class="flex items-center gap-2.5">
+                <div id="tg-chat-avatar" class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-md">
                   👷
                 </div>
                 <div>
-                  <h3 id="tg-chat-title" class="font-extrabold text-sm text-white leading-tight">Worker 1 (U)</h3>
-                  <p id="tg-chat-subtitle" class="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5 mt-0.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <h3 id="tg-chat-title" class="font-extrabold text-xs text-white leading-tight">Worker 1 (U)</h3>
+                  <p id="tg-chat-subtitle" class="text-[10px] font-semibold text-emerald-400 flex items-center gap-1 mt-0.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     Telegram ID: 8889864487 • Kamptee Patrol Unit
                   </p>
                 </div>
               </div>
 
               <div class="flex items-center gap-2">
-                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-extrabold flex items-center gap-1">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-extrabold flex items-center gap-1">
                   <span class="tick-blue">✓✓</span> Telegram Bot Sync
                 </span>
               </div>
             </div>
 
             <!-- WhatsApp Background Messages Feed -->
-            <div id="tg-chat-messages-feed" class="flex-1 overflow-y-auto p-5 space-y-3.5 whatsapp-bg font-sans">
+            <div id="tg-chat-messages-feed" class="flex-1 overflow-y-auto p-4 space-y-3 whatsapp-bg font-sans">
               <!-- Default sample messages for immediate demonstration -->
-              <div class="flex justify-start my-2.5">
-                <div class="chat-bubble-wa-incoming p-3.5 max-w-lg">
+              <div class="flex justify-start my-1.5">
+                <div class="chat-bubble-wa-incoming p-3 max-w-lg">
                   <div class="flex items-center justify-between mb-1 gap-3">
-                    <span class="text-xs font-extrabold text-emerald-400 flex items-center gap-1">
+                    <span class="text-[11px] font-extrabold text-emerald-400 flex items-center gap-1">
                       👷 Worker 1 (U)
                     </span>
-                    <span class="text-[10px] text-slate-400 font-mono">14:15:00</span>
+                    <span class="text-[9px] text-slate-400 font-mono">14:15:00</span>
                   </div>
                   <p class="text-xs text-slate-200 font-medium leading-relaxed">
                     Kamptee barrage water intake checked. Sensor readings normal at 22.5cm. Proceeding to Nag River north bridge.
@@ -924,13 +924,13 @@
                 </div>
               </div>
 
-              <div class="flex justify-end my-2.5">
-                <div class="chat-bubble-wa-outgoing p-3.5 max-w-lg">
+              <div class="flex justify-end my-1.5">
+                <div class="chat-bubble-wa-outgoing p-3 max-w-lg">
                   <div class="flex items-center justify-between mb-1 gap-3">
-                    <span class="text-xs font-extrabold text-cyan-200 flex items-center gap-1">
+                    <span class="text-[11px] font-extrabold text-cyan-200 flex items-center gap-1">
                       👑 Admin C2
                     </span>
-                    <span class="text-[10px] text-slate-300 font-mono flex items-center gap-1">
+                    <span class="text-[9px] text-slate-300 font-mono flex items-center gap-1">
                       14:16:30 <span class="tick-blue">✓✓</span>
                     </span>
                   </div>
@@ -942,19 +942,19 @@
             </div>
 
             <!-- Quick Action Chips Bar -->
-            <div class="px-4 py-2 bg-[#131d2b] border-t border-white/10 flex items-center gap-2 overflow-x-auto shrink-0">
-              <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider shrink-0">Quick Directives:</span>
-              <button onclick="triggerTgChip('check_water')" class="action-chip text-xs" data-tooltip="Send water inspection directive">💧 Check Water Intake</button>
-              <button onclick="triggerTgChip('deploy_compactor')" class="action-chip text-xs" data-tooltip="Deploy compactor to drain">🚜 Deploy Compactor</button>
-              <button onclick="triggerTgChip('clean_heritage')" class="action-chip text-xs" data-tooltip="Assign heritage area cleaning">🏛️ Clean Heritage Sites</button>
-              <button onclick="triggerTgChip('request_status')" class="action-chip text-xs" data-tooltip="Ask for status update">📋 Request Task Status</button>
+            <div class="px-3 py-1.5 bg-[#131d2b] border-t border-white/10 flex items-center gap-1.5 overflow-x-auto shrink-0">
+              <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-wider shrink-0">Directives:</span>
+              <button onclick="triggerTgChip('check_water')" class="action-chip text-[11px] py-1 px-2.5" data-tooltip="Send water inspection directive">💧 Check Water</button>
+              <button onclick="triggerTgChip('deploy_compactor')" class="action-chip text-[11px] py-1 px-2.5" data-tooltip="Deploy compactor to drain">🚜 Compactor</button>
+              <button onclick="triggerTgChip('clean_heritage')" class="action-chip text-[11px] py-1 px-2.5" data-tooltip="Assign heritage area cleaning">🏛️ Clean Heritage</button>
+              <button onclick="triggerTgChip('request_status')" class="action-chip text-[11px] py-1 px-2.5" data-tooltip="Ask for status update">📋 Status Update</button>
             </div>
 
             <!-- Bottom Chat Input Bar -->
-            <form id="tg-direct-send-form" onsubmit="sendTgDirectMessage(event)" class="p-3.5 px-4 bg-[#131d2b] border-t border-white/10 flex items-center gap-3 shrink-0">
-              <input type="text" id="tg-chat-input" required placeholder="Type directive message to send directly to Telegram..." class="flex-1 bg-[#0b111a] border border-white/15 focus:border-cyan-500 rounded-xl px-4 py-3 text-xs font-semibold text-white placeholder-slate-500 focus:outline-none transition shadow-inner">
-              <button type="submit" class="py-3 px-5 btn-cyber-primary font-extrabold text-xs transition flex items-center gap-2 shrink-0 shadow-lg shadow-blue-600/30">
-                <i data-lucide="send" class="w-4 h-4"></i>
+            <form id="tg-direct-send-form" onsubmit="sendTgDirectMessage(event)" class="p-2.5 px-3.5 bg-[#131d2b] border-t border-white/10 flex items-center gap-2.5 shrink-0">
+              <input type="text" id="tg-chat-input" required placeholder="Type directive message to send directly to Telegram..." class="flex-1 bg-[#0b111a] border border-white/15 focus:border-cyan-500 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-white placeholder-slate-500 focus:outline-none transition shadow-inner">
+              <button type="submit" class="py-2.5 px-4 btn-cyber-primary font-extrabold text-xs transition flex items-center gap-1.5 shrink-0 shadow-lg shadow-blue-600/30">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
                 <span>Send ✓✓</span>
               </button>
             </form>
@@ -966,45 +966,45 @@
       <!-- ======================================================================== -->
       <!-- TAB 6: AI DEBATE ROOM -->
       <!-- ======================================================================== -->
-      <section id="tab-debate" class="tab-content hidden space-y-6">
-        <div class="glass-card p-6 space-y-4">
-          <div class="flex flex-wrap items-center justify-between pb-4 border-b border-white/10 gap-3">
+      <section id="tab-debate" class="tab-content hidden space-y-4">
+        <div class="glass-card p-4 flex flex-col h-[calc(100vh-145px)] min-h-[500px] space-y-3">
+          <div class="flex flex-wrap items-center justify-between pb-3 border-b border-white/10 gap-2 shrink-0">
             <div>
-              <h3 class="font-extrabold text-base text-white flex items-center gap-2">
-                <i data-lucide="radio" class="w-5 h-5 text-purple-400"></i> Autonomous Multi-Agent AI Debate Room
+              <h3 class="font-extrabold text-sm text-white flex items-center gap-2">
+                <i data-lucide="radio" class="w-4 h-4 text-purple-400"></i> Autonomous Multi-Agent AI Debate Room
               </h3>
-              <p class="text-xs text-slate-400 mt-1">Multi-Persona Consensus Negotiation • Zone 1, 2, 3 & Admin Orchestrator</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Multi-Persona Consensus Negotiation • Zone 1, 2, 3 & Admin Orchestrator</p>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="triggerAutoAIDebate()" class="py-2.5 px-4 btn-cyber-primary font-bold text-xs flex items-center gap-2">
-                <i data-lucide="play" class="w-4 h-4"></i> Run 1 Debate Cycle
+              <button onclick="triggerAutoAIDebate()" class="py-2 px-3.5 btn-cyber-primary font-bold text-xs flex items-center gap-1.5">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Run 1 Debate Cycle
               </button>
             </div>
           </div>
 
           <!-- Scenario Simulators Bar for Debate Room -->
-          <div class="glass-card p-3 px-4 flex flex-wrap items-center justify-between gap-2 border border-white/15 bg-[#101926]/90 rounded-xl">
-            <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+          <div class="glass-card p-2 px-3 flex flex-wrap items-center justify-between gap-1.5 border border-white/15 bg-[#101926]/90 rounded-xl shrink-0">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-slate-300">
               <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
-              <span class="uppercase tracking-wider text-[11px] text-purple-300 font-extrabold">Inject Scenario into Debate:</span>
+              <span class="uppercase tracking-wider text-[10px] text-purple-300 font-extrabold">Inject Scenario:</span>
             </div>
 
-            <div class="flex flex-wrap items-center gap-2 text-xs">
-              <button onclick="triggerSimulation()" class="btn-sim-flood px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Nag River Flash Flood in debate">
+            <div class="flex flex-wrap items-center gap-1.5 text-xs">
+              <button onclick="triggerSimulation()" class="btn-sim-flood px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Nag River Flash Flood in debate">
                 <span>⚡</span> Flood Scenario
               </button>
-              <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl in debate">
+              <button onclick="quickScenario('traffic_gridlock')" class="btn-sim-traffic px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Sitabuldi traffic snarl in debate">
                 <span>🚦</span> Traffic Scenario
               </button>
-              <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Simulate Hingna vector outbreak in debate">
+              <button onclick="quickScenario('vector_outbreak')" class="btn-sim-health px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Simulate Hingna vector outbreak in debate">
                 <span>🏥</span> Vector Scenario
               </button>
-              <button onclick="quickResetSensors()" class="btn-sim-reset px-3 py-1.5 rounded-lg font-bold flex items-center gap-1 cursor-pointer" data-tooltip="Reset debate context">
+              <button onclick="quickResetSensors()" class="btn-sim-reset px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-[10px] cursor-pointer" data-tooltip="Reset debate context">
                 <span>🛡️</span> Reset
               </button>
             </div>
           </div>
-          <div id="debate-stream" class="h-[450px] overflow-y-auto space-y-3 font-sans text-xs bg-[#090f17] p-4 rounded-xl border border-white/10">
+          <div id="debate-stream" class="flex-1 overflow-y-auto space-y-2.5 font-sans text-xs bg-[#090f17] p-3.5 rounded-xl border border-white/10">
             <div class="text-center text-slate-500 py-12">Click 'Run 1 Debate Cycle' to initiate multi-agent AI discussion.</div>
           </div>
         </div>
@@ -1013,58 +1013,58 @@
       <!-- ======================================================================== -->
       <!-- TAB 7: REPORTS & NEWS INGESTION -->
       <!-- ======================================================================== -->
-      <section id="tab-upload" class="tab-content hidden space-y-6">
-        <div class="glass-card p-6 space-y-5">
-          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+      <section id="tab-upload" class="tab-content hidden space-y-4">
+        <div class="glass-card p-4 md:p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-white/10">
             <div>
-              <h3 class="font-extrabold text-base text-white flex items-center gap-2">
-                <i data-lucide="file-text" class="w-5 h-5 text-cyan-400"></i> Document & Report Ingestion Terminal
+              <h3 class="font-extrabold text-sm text-white flex items-center gap-2">
+                <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i> Document & Report Ingestion Terminal
               </h3>
-              <p class="text-xs text-slate-400">Ingest .txt, .csv, .doc, .pdf documents directly into multi-agent memory.</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Ingest .txt, .csv, .doc, .pdf documents directly into multi-agent memory.</p>
             </div>
-            <button onclick="refreshGoogleDocsNow()" class="py-2 px-4 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 font-bold text-xs rounded-xl flex items-center gap-2 transition">
-              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Refresh Google Docs
+            <button onclick="refreshGoogleDocsNow()" class="py-1.5 px-3 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 font-bold text-xs rounded-xl flex items-center gap-1.5 transition">
+              <i data-lucide="refresh-cw" class="w-3 h-3"></i> Refresh Google Docs
             </button>
           </div>
 
-          <form id="upload-news-form" onsubmit="uploadDocumentNews(event)" class="space-y-4">
-            <div class="upload-dropzone border border-dashed border-white/20 bg-white/5 p-8 rounded-2xl text-center cursor-pointer hover:bg-white/10 transition" onclick="document.getElementById('file-input').click()">
-              <i data-lucide="upload-cloud" class="w-10 h-10 text-cyan-400 mx-auto mb-2"></i>
-              <h4 class="font-bold text-sm text-white">Click or Drag & Drop Report File Here</h4>
-              <p class="text-xs text-slate-400 mt-1">Supports .txt, .csv, .doc, .pdf, .json</p>
+          <form id="upload-news-form" onsubmit="uploadDocumentNews(event)" class="space-y-3">
+            <div class="upload-dropzone border border-dashed border-white/20 bg-white/5 p-5 rounded-xl text-center cursor-pointer hover:bg-white/10 transition" onclick="document.getElementById('file-input').click()">
+              <i data-lucide="upload-cloud" class="w-8 h-8 text-cyan-400 mx-auto mb-1.5"></i>
+              <h4 class="font-bold text-xs text-white">Click or Drag & Drop Report File Here</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">Supports .txt, .csv, .doc, .pdf, .json</p>
               <input type="file" id="file-input" class="hidden" onchange="handleFileSelect(event)">
-              <div id="file-name-display" class="text-xs font-mono text-cyan-400 mt-2"></div>
+              <div id="file-name-display" class="text-xs font-mono text-cyan-400 mt-1.5"></div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1.5">Or Paste Raw Report / Directives Directly</label>
-              <textarea id="upload-text-input" rows="3" placeholder="Paste news or complaint text..." class="w-full bg-[#0b111a] border border-white/15 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"></textarea>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Or Paste Raw Report / Directives Directly</label>
+              <textarea id="upload-text-input" rows="2.5" placeholder="Paste news or complaint text..." class="w-full bg-[#0b111a] border border-white/15 rounded-xl p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"></textarea>
             </div>
 
             <div class="flex justify-end">
-              <button type="submit" class="py-2.5 px-6 btn-cyber-primary font-bold text-xs flex items-center gap-2">
-                <i data-lucide="sparkles" class="w-4 h-4"></i> Ingest Document Directive
+              <button type="submit" class="py-2 px-5 btn-cyber-primary font-bold text-xs flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Ingest Document Directive
               </button>
             </div>
           </form>
 
           <!-- 3-Zone Live Google Docs Feed Preview Cards -->
-          <div class="pt-6 border-t border-white/10 space-y-4">
+          <div class="pt-4 border-t border-white/10 space-y-3">
             <div class="flex items-center justify-between">
-              <h4 class="font-extrabold text-sm text-white flex items-center gap-2">
-                <i data-lucide="book-open" class="w-4 h-4 text-cyan-400"></i> Synced Live Google Docs Knowledge Base
+              <h4 class="font-extrabold text-xs text-white flex items-center gap-1.5">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i> Synced Live Google Docs Knowledge Base
               </h4>
-              <span class="text-[10px] text-emerald-400 font-bold bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Auto-Synced 2026</span>
+              <span class="text-[9px] text-emerald-400 font-bold bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/30">Auto-Synced 2026</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
               <!-- Zone 1 Doc -->
-              <div class="glass-card-sm p-4 space-y-2 border-t-2 border-t-cyan-500">
+              <div class="glass-card-sm p-3 space-y-1.5 border-t-2 border-t-cyan-500">
                 <div class="flex items-center justify-between">
-                  <span class="font-extrabold text-cyan-400 flex items-center gap-1.5">💧 Zone 1 (Neer-Krishi)</span>
+                  <span class="font-extrabold text-cyan-400 flex items-center gap-1 text-xs">💧 Zone 1 (Neer-Krishi)</span>
                   <a href="https://docs.google.com/document/d/11UXOyAbyGhIhegMV2bNhZy0SYJNiy0t4zuEl9QHnTt8/edit" target="_blank" class="text-[10px] text-cyan-300 underline font-bold">Open Doc ↗</a>
                 </div>
-                <div id="news-summary-zone1" class="text-slate-300 text-[11px] leading-relaxed space-y-1">
+                <div id="news-summary-zone1" class="text-slate-300 text-[10.5px] leading-relaxed space-y-1">
                   • <strong>Kanhan Hydrology:</strong> Water levels stable below alert threshold at Juni Kamptee intake (22.5cm).<br/>
                   • <strong>Kharif Agri Watch:</strong> Soybean & cotton crops healthy across Kamptee rural clusters.<br/>
                   • <strong>Bridge Desiltation:</strong> NMC teams clearing Nag River Kamptee north confluence.
@@ -1072,12 +1072,12 @@
               </div>
 
               <!-- Zone 2 Doc -->
-              <div class="glass-card-sm p-4 space-y-2 border-t-2 border-t-amber-500">
+              <div class="glass-card-sm p-3 space-y-1.5 border-t-2 border-t-amber-500">
                 <div class="flex items-center justify-between">
-                  <span class="font-extrabold text-amber-400 flex items-center gap-1.5">🏙️ Zone 2 (Nagari-Tantra)</span>
+                  <span class="font-extrabold text-amber-400 flex items-center gap-1 text-xs">🏙️ Zone 2 (Nagari-Tantra)</span>
                   <a href="https://docs.google.com/document/d/1fo2hnkz4z6FVvRXOviorWFdYwLkAru8YojvmTenBIFY/edit" target="_blank" class="text-[10px] text-amber-300 underline font-bold">Open Doc ↗</a>
                 </div>
-                <div id="news-summary-zone2" class="text-slate-300 text-[11px] leading-relaxed space-y-1">
+                <div id="news-summary-zone2" class="text-slate-300 text-[10.5px] leading-relaxed space-y-1">
                   • <strong>Sitabuldi Traffic:</strong> Interchange flowing steadily; stormwater drain #4 cleared.<br/>
                   • <strong>Open Plot Garbage:</strong> NMC active crackdown on illegal debris dumping on Central Ave.<br/>
                   • <strong>Public Safety:</strong> Digital awareness advisory active across North Ambazari corridor.
@@ -1085,12 +1085,12 @@
               </div>
 
               <!-- Zone 3 Doc -->
-              <div class="glass-card-sm p-4 space-y-2 border-t-2 border-t-purple-500">
+              <div class="glass-card-sm p-3 space-y-1.5 border-t-2 border-t-purple-500">
                 <div class="flex items-center justify-between">
-                  <span class="font-extrabold text-purple-400 flex items-center gap-1.5">🏥 Zone 3 (Swasthya-Raksha)</span>
+                  <span class="font-extrabold text-purple-400 flex items-center gap-1 text-xs">🏥 Zone 3 (Swasthya-Raksha)</span>
                   <a href="https://docs.google.com/document/d/1aE1sAMZj84afL4GTStQ6vTMMGrY8rpNfP-t_1TFAS6I/edit" target="_blank" class="text-[10px] text-purple-300 underline font-bold">Open Doc ↗</a>
                 </div>
-                <div id="news-summary-zone3" class="text-slate-300 text-[11px] leading-relaxed space-y-1">
+                <div id="news-summary-zone3" class="text-slate-300 text-[10.5px] leading-relaxed space-y-1">
                   • <strong>MIHAN Infrastructure:</strong> Water tariff alignment completed for IT park residential SEZ.<br/>
                   • <strong>Ambazari Spillway:</strong> Normal discharge flow; 0% flood threat across Somalwada.<br/>
                   • <strong>Vector Control:</strong> Mobile fogging squads active in Hingna MIDC Sector 12.
@@ -1199,6 +1199,6 @@
   </div>
 
   <!-- App Javascript with Cache-Buster -->
-  <script src="app.js?v=2026.3"></script>
+  <script src="app.js?v=2026.4"></script>
 </body>
 </html>
