@@ -145,10 +145,35 @@ The platform orchestrates **6 specialized AI agents** operating in a coordinated
 
 ---
 
-## 6. Verification Commands & Operational Checklist
+## 6. Complete File Directory & Component Manifest
+
+| Component Group | Filename | Exact Role & Description |
+| :--- | :--- | :--- |
+| **Dashboard** | [`index.html`](file:///c:/Users/lokha/Downloads/Synth%20City/index.html) | Interactive Glassmorphism command & control dashboard for metropolitan operations. |
+| **Styling** | [`styles.css`](file:///c:/Users/lokha/Downloads/Synth%20City/styles.css) | Cyber-glass visual theme, dark mode, responsive cards, WhatsApp console UI, and tooltips. |
+| **Client Engine** | [`app.js`](file:///c:/Users/lokha/Downloads/Synth%20City/app.js) | Leaflet map renderer, Chart.js telemetry, speech recognition, and simulation triggers. |
+| **Config** | [`config.js`](file:///c:/Users/lokha/Downloads/Synth%20City/config.js) | Contiguous zero-gap zone polygons, Esri World Street default tile layer, and geocoding. |
+| **AI Engine** | [`synthcity_engine.py`](file:///c:/Users/lokha/Downloads/Synth%20City/synthcity_engine.py) | Python multi-agent engine with Gemini key rotator, model failover chain, and Firebase sync. |
+| **C2 Server** | [`backend.py`](file:///c:/Users/lokha/Downloads/Synth%20City/backend.py) | Local REST API server for civic dataset ingestion, field dispatches, and AI agent routing. |
+| **Telegram Bot** | [`bot_engine.py`](file:///c:/Users/lokha/Downloads/Synth%20City/bot_engine.py) | Telegram bot daemon with rate-limiting, citizen complaint intake, and emergency alerts. |
+| **IoT Firmware** | [`esp32_flood_sensor.ino`](file:///c:/Users/lokha/Downloads/Synth%20City/esp32_flood_sensor.ino) | Arduino C++ firmware for ESP32 + HC-SR04 ultrasonic sensor with HTTP telemetry push. |
+| **Datasets** | [`ambulance_data.csv`](file:///c:/Users/lokha/Downloads/Synth%20City/ambulance_data.csv) | Nagpur Emergency 102 ambulance fleet registry and dispatch contacts. |
+| **Datasets** | [`rainfall_data.csv`](file:///c:/Users/lokha/Downloads/Synth%20City/rainfall_data.csv) | Vidarbha & Nagpur monsoon historical rainfall statistics across districts. |
+| **Datasets** | [`town_amenities.csv`](file:///c:/Users/lokha/Downloads/Synth%20City/town_amenities.csv) | Nagpur District Census Handbook urban civic amenities dataset. |
+| **Datasets** | [`village_amenities.csv`](file:///c:/Users/lokha/Downloads/Synth%20City/village_amenities.csv) | Nagpur District Census Handbook rural village infrastructure dataset. |
+| **Datasets** | [`health_data.xls`](file:///c:/Users/lokha/Downloads/Synth%20City/health_data.xls) | NFHS-5 factsheets on district public health, sanitation, and water access. |
+| **Prompts** | [`master_prompt.txt`](file:///c:/Users/lokha/Downloads/Synth%20City/master_prompt.txt) | Detailed system prompts for all 6 AI personas (C2 Admin, Zone 1-3, Health, Logistics). |
+| **Prompts** | [`system_prompts.txt`](file:///c:/Users/lokha/Downloads/Synth%20City/system_prompts.txt) | Condensed prompt reference for rapid local prototyping and evaluation. |
+| **Concept** | [`project_concept.txt`](file:///c:/Users/lokha/Downloads/Synth%20City/project_concept.txt) | Original project ideation notes, agent debate mechanics, and civic vision. |
+| **Launcher** | [`START_SYSTEM.bat`](file:///c:/Users/lokha/Downloads/Synth%20City/START_SYSTEM.bat) | 1-click Windows batch launcher for backend server, Telegram daemon, and web UI. |
+
+---
+
+## 7. Verification Commands & Operational Checklist
 1. **JavaScript Syntax Check**:
-   `node -c app.js`
+   `node -c app.js config.js`
 2. **Python Engine Test**:
-   `python -c "import synthcity_engine"`
+   `python -m py_compile backend.py synthcity_engine.py bot_engine.py`
 3. **Resource Files Verification**:
    `powershell -Command "Get-Item setup_manual.html, setup_manual.md, esp32_flood_sensor.ino, PROJECT_DOCUMENTATION.md | Select-Object Name, Length"`
+

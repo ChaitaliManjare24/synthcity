@@ -178,25 +178,52 @@ SynthCity integrates live hydrological telemetry using the **ESP32 Microcontroll
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Structure & File Dictionary
+
+Every file in Project SynthCity is organized with a simple, standard name and a clear single-purpose role:
 
 ```
 SynthCity/
-├── index.html              # Main Command & Control Dashboard (GitHub Pages Ready)
-├── styles.css              # Cyber-glass styling, dark mode, WhatsApp theme, tooltips
-├── app.js                  # Frontend Leaflet map engine, telemetry & simulation UI logic
-├── config.js               # Contiguous zone boundaries, map tile endpoints & dictionary
-├── synthcity_engine.py     # Python Multi-Agent AI Engine with Key Rotator & Failover
-├── bot_engine.py           # Telegram Bot integration engine with anti-spam cache
-├── backend.py              # Python C2 REST API Server
-├── esp32_flood_sensor.ino  # C++ Arduino firmware for ESP32 + HC-SR04 flood sensor
-├── firebase_schema.json    # Firebase Realtime Database schema
-├── database.rules.json     # Firebase security rules
-├── requirements.txt        # Python dependency requirements
-├── assets/
-│   ├── images/             # Generated AI hero banners & ESP32 hardware photos
-│   └── screenshots/        # High-res UI screenshot assets
-└── *.csv / *.xls           # Nagpur district demographic, health & ambulance datasets
+├── 🌐 Web Application & Dashboard
+│   ├── index.html              # Main Glassmorphic C2 Command & Control Web Dashboard
+│   ├── styles.css              # Cyber-glass styling, dark mode themes, WhatsApp UI, and tooltip animations
+│   ├── app.js                  # Frontend Leaflet map engine, Chart.js telemetry, speech recognition & simulation UI
+│   └── config.js               # Contiguous zone boundaries, default map tiles (Esri World Street), and API settings
+│
+├── 🧠 Multi-Agent AI & C2 Backend
+│   ├── synthcity_engine.py     # Python 6-Agent AI engine with automatic Gemini key rotation & model failover
+│   ├── backend.py              # Local HTTP/REST C2 backend server with civic dataset queries & Gemini agent routing
+│   ├── bot_engine.py           # Telegram bot daemon with rate-limiting, citizen complaint intake & admin dispatches
+│   ├── master_prompt.txt       # Master system prompts and knowledge guidelines for all 6 AI agent personas
+│   ├── system_prompts.txt      # Quick-reference condensed prompt guidelines for local testing
+│   └── project_concept.txt     # Original project ideation notes, agent debate mechanics, and civic vision
+│
+├── 📡 Hardware & IoT Firmware
+│   └── esp32_flood_sensor.ino  # C++ Arduino firmware for ESP32 NodeMCU + HC-SR04 ultrasonic water level monitoring
+│
+├── 📊 Civic Datasets (Nagpur District)
+│   ├── ambulance_data.csv      # Nagpur Emergency 102 Ambulance fleet directory and contact registry
+│   ├── rainfall_data.csv       # Vidarbha & Nagpur monsoon historical rainfall and precipitation records
+│   ├── town_amenities.csv      # Nagpur District Census Handbook - Urban civic infrastructure & amenities
+│   ├── village_amenities.csv   # Nagpur District Census Handbook - Rural village infrastructure & public amenities
+│   └── health_data.xls         # NFHS-5 factsheet on Nagpur district health, nutrition, and sanitation indicators
+│
+├── ☁️ Firebase & Configuration
+│   ├── firebase_schema.json    # Firebase Realtime Database schema for multi-agent state sync
+│   ├── database.rules.json     # Firebase Realtime Database security & read/write access rules
+│   ├── api_keys.example.txt    # Template file for Gemini API keys and Telegram bot token
+│   └── requirements.txt        # Python package dependencies (requests, google-generativeai)
+│
+├── 🚀 Scripts & Documentation
+│   ├── START_SYSTEM.bat        # 1-Click Windows launcher for backend server, Telegram bot, and web dashboard
+│   ├── README.md               # Main project documentation, live demo links, and architecture guides
+│   ├── PROJECT_DOCUMENTATION.md# Deep architectural technical specification and system design
+│   ├── setup_manual.md         # Comprehensive step-by-step setup and troubleshooting guide (Markdown)
+│   └── setup_manual.html       # Visual standalone HTML version of the setup guide
+│
+└── 🖼️ Assets
+    ├── assets/images/          # Generated AI hero banners & ESP32 hardware photos
+    └── assets/screenshots/     # High-resolution dashboard UI reference screenshots
 ```
 
 ---

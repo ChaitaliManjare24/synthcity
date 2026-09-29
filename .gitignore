@@ -5,6 +5,7 @@ __pycache__/
 
 # Environment & API Key secrets
 api_keys.txt
+api_keys_archive.txt
 Api keys synth city.txt
 .env
 

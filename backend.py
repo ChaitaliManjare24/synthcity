@@ -88,7 +88,8 @@ def send_telegram_direct(target, message_text):
 def load_nagpur_datasets():
     dataset_summary = []
     
-    town_csv = "DCHB_Town_Amenities-Maharashtra-NAGPUR-505.csv"
+    # 1. Urban Town Amenities
+    town_csv = "town_amenities.csv" if os.path.exists("town_amenities.csv") else "DCHB_Town_Amenities-Maharashtra-NAGPUR-505.csv"
     if os.path.exists(town_csv):
         try:
             with open(town_csv, 'r', encoding='utf-8', errors='ignore') as f:
@@ -98,7 +99,8 @@ def load_nagpur_datasets():
         except Exception:
             pass
 
-    vill_csv = "DCHB_Village_Amenities-Maharashtra-Nagpur-505.csv"
+    # 2. Rural Village Infrastructure
+    vill_csv = "village_amenities.csv" if os.path.exists("village_amenities.csv") else "DCHB_Village_Amenities-Maharashtra-Nagpur-505.csv"
     if os.path.exists(vill_csv):
         try:
             with open(vill_csv, 'r', encoding='utf-8', errors='ignore') as f:
@@ -108,7 +110,8 @@ def load_nagpur_datasets():
         except Exception:
             pass
 
-    amb_csv = "Ambulance_102_Information_Nagpur__0.csv"
+    # 3. Ambulance 102 Emergency Fleet
+    amb_csv = "ambulance_data.csv" if os.path.exists("ambulance_data.csv") else "Ambulance_102_Information_Nagpur__0.csv"
     if os.path.exists(amb_csv):
         try:
             with open(amb_csv, 'r', encoding='utf-8', errors='ignore') as f:
@@ -118,17 +121,19 @@ def load_nagpur_datasets():
         except Exception:
             pass
 
-    b2_csv = "Book_2.csv"
-    if os.path.exists(b2_csv):
+    # 4. Regional Rainfall Statistics
+    rain_csv = "rainfall_data.csv" if os.path.exists("rainfall_data.csv") else "Book_2.csv"
+    if os.path.exists(rain_csv):
         try:
-            with open(b2_csv, 'r', encoding='utf-8', errors='ignore') as f:
+            with open(rain_csv, 'r', encoding='utf-8', errors='ignore') as f:
                 reader = list(csv.reader(f))
                 count = max(0, len(reader) - 1)
-                dataset_summary.append(f"• [MUNICIPAL ASSETS]: {count} municipal compactor & drainage equipment nodes.")
+                dataset_summary.append(f"• [RAINFALL DATA]: {count} regional precipitation & monsoon district datasets.")
         except Exception:
             pass
 
-    nfhs_file = "NFHS_5_Factsheets_Data.xls"
+    # 5. NFHS-5 Public Health Factsheet
+    nfhs_file = "health_data.xls" if os.path.exists("health_data.xls") else "NFHS_5_Factsheets_Data.xls"
     if os.path.exists(nfhs_file):
         dataset_summary.append("• [NFHS-5 HEALTH DATA]: District health, sanitation, and clean drinking water indicators loaded.")
 

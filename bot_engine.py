@@ -20,12 +20,22 @@ import asyncio
 import logging
 import requests
 import datetime
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 # Logging Setup
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger("SynthCityC2")
+
+# Check for python-telegram-bot SDK or fallback to Direct REST
+TELEGRAM_SDK_AVAILABLE = False
+try:
+    from telegram import Update
+    from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
+    TELEGRAM_SDK_AVAILABLE = True
+except ImportError:
+    class Update: pass
+    class ContextTypes:
+        DEFAULT_TYPE = object
+    logger.info("[INFO] 'python-telegram-bot' not installed. Operating in Native REST Polling Mode.")
 
 # Set stdout encoding
 if hasattr(sys.stdout, 'reconfigure'):
@@ -416,6 +426,45 @@ async def dashboard_outbox_listener(app):
         await asyncio.sleep(2.0)
 
 # ==============================================================================
+# NATIVE REST POLLING FALLBACK (Zero External SDK Dependency)
+# ==============================================================================
+def run_native_rest_polling():
+    logger.info("Starting Native Telegram Bot Long-Polling via REST API...")
+    last_update_id = 0
+    while True:
+        try:
+            url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getUpdates"
+            params = {"offset": last_update_id + 1, "timeout": 20}
+            res = requests.get(url, params=params, timeout=25)
+            if res.status_code == 200:
+                data = res.json()
+                for update in data.get("result", []):
+                    last_update_id = update.get("update_id", last_update_id)
+                    msg = update.get("message", {})
+                    chat_id = msg.get("chat", {}).get("id")
+                    text = msg.get("text", "")
+                    sender = msg.get("from", {}).get("first_name", "User")
+                    if chat_id and text:
+                        logger.info(f"[NATIVE REST INCOMING] From {sender} ({chat_id}): {text}")
+                        # Echo or process if needed
+            
+            # Check dashboard outbox
+            state = load_state()
+            outbox = state.get("dashboard_outbox", [])
+            if outbox:
+                state["dashboard_outbox"] = []
+                save_state(state)
+                for item in outbox:
+                    target = item.get("target")
+                    msg_text = item.get("message")
+                    target_id = WORKER_1_ID if target == "worker1" else CITIZEN_Z2_ID
+                    if target_id and str(target_id).isdigit():
+                        requests.post(f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage", json={"chat_id": int(target_id), "text": msg_text}, timeout=5)
+        except Exception as e:
+            time.sleep(3)
+        time.sleep(1)
+
+# ==============================================================================
 # MAIN BOT ENGINE LAUNCHER
 # ==============================================================================
 def main():
@@ -426,7 +475,12 @@ def main():
     print(f"• WORKER 1 ID: {WORKER_1_ID} ('U')")
     print(f"• CITIZEN Z2 ID: {CITIZEN_Z2_ID} ('Dhynendra Gaurkar')")
     print(f"• WORKER 2 ADMIN ID: {WORKER_2_ADMIN_ID} ('Ritesh Alone')")
+    print(f"• ENGINE MODE: {'SDK Async' if TELEGRAM_SDK_AVAILABLE else 'Direct REST Native'}")
     print("================================================================================")
+
+    if not TELEGRAM_SDK_AVAILABLE:
+        run_native_rest_polling()
+        return
 
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_telegram_message))
