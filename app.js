@@ -138,26 +138,45 @@ function showToast(title, message, type = 'info') {
   toast.className = `toast-popup toast-${type}`;
 
   let iconName = 'info';
-  if (type === 'success') iconName = 'check-circle';
-  if (type === 'warning') iconName = 'alert-triangle';
-  if (type === 'error') iconName = 'x-circle';
+  let iconColor = 'text-cyan-400';
+  if (type === 'success') { iconName = 'check-circle'; iconColor = 'text-emerald-400'; }
+  if (type === 'warning') { iconName = 'alert-triangle'; iconColor = 'text-amber-400'; }
+  if (type === 'error') { iconName = 'x-circle'; iconColor = 'text-red-400'; }
 
   toast.innerHTML = `
-    <i data-lucide="${iconName}" class="w-4 h-4 shrink-0 ${type === 'success' ? 'text-emerald-600' : type === 'warning' ? 'text-amber-600' : type === 'error' ? 'text-red-600' : 'text-blue-600'}"></i>
+    <i data-lucide="${iconName}" class="w-5 h-5 shrink-0 ${iconColor} mt-0.5"></i>
     <div class="flex-1 min-w-0">
-      <h4 class="font-bold text-[12px] text-slate-900 leading-tight">${title}</h4>
-      ${message ? `<p class="text-[11px] text-slate-600 leading-tight mt-0.5 truncate">${message}</p>` : ''}
+      <h4 class="font-extrabold text-xs text-white leading-tight">${title}</h4>
+      ${message ? `<p class="text-[11px] text-slate-300 leading-normal mt-1">${message}</p>` : ''}
     </div>
   `;
 
   container.appendChild(toast);
-  lucide.createIcons();
+  if (window.lucide) lucide.createIcons();
 
   setTimeout(() => {
     toast.style.opacity = '0';
     toast.style.transform = 'translateX(100%)';
     setTimeout(() => toast.remove(), 250);
-  }, 3500);
+  }, 4000);
+}
+
+function toggleNotifications() {
+  const dropdown = document.getElementById('notifications-dropdown');
+  if (!dropdown) return;
+  dropdown.classList.toggle('hidden');
+}
+
+function clearNotifications() {
+  const list = document.getElementById('notifications-list');
+  const badge = document.getElementById('notif-badge-count');
+  if (list) {
+    list.innerHTML = '<div class="text-center text-slate-500 py-6 text-xs">No unread notifications. All clear! 🛡️</div>';
+  }
+  if (badge) {
+    badge.style.display = 'none';
+  }
+  showToast("Notifications Cleared", "All civic alerts acknowledged.", "info");
 }
 
 function switchTab(tabId) {
@@ -1499,6 +1518,8 @@ window.selectTelegramContact = selectTelegramContact;
 window.sendTgDirectMessage = sendTgDirectMessage;
 window.triggerAutoAIDebate = triggerAutoAIDebate;
 window.refreshGoogleDocsNow = refreshGoogleDocsNow;
+window.toggleNotifications = toggleNotifications;
+window.clearNotifications = clearNotifications;
 window.openEmergencyModal = openEmergencyModal;
 window.closeEmergencyModal = closeEmergencyModal;
 window.triggerEmergencyEvacuationModal = triggerEmergencyEvacuationModal;

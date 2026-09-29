@@ -27,8 +27,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Configuration & Custom Styles with Cache-Buster -->
-  <script src="config.js?v=2026.4"></script>
-  <link rel="stylesheet" href="styles.css?v=2026.4">
+  <script src="config.js?v=2026.5"></script>
+  <link rel="stylesheet" href="styles.css?v=2026.5">
 
   <script>
     tailwind.config = {
@@ -163,10 +163,58 @@
           </span>
         </div>
 
-        <!-- Notification Bell with Red Badge (Matching Screenshot 1) -->
-        <div class="relative p-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition" data-tooltip="1 Unread High-Priority Alert">
-          <i data-lucide="bell" class="w-4 h-4 text-slate-300"></i>
-          <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-600 text-white text-[8px] font-extrabold rounded-full flex items-center justify-center">1</span>
+        <!-- Notification Bell with Red Badge & Interactive Dropdown -->
+        <div class="relative">
+          <button onclick="toggleNotifications()" id="notif-bell-btn" class="relative p-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition flex items-center justify-center" data-tooltip="Civic Alert Notifications">
+            <i data-lucide="bell" class="w-4 h-4 text-slate-200"></i>
+            <span id="notif-badge-count" class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-600 text-white text-[8px] font-extrabold rounded-full flex items-center justify-center animate-pulse">3</span>
+          </button>
+
+          <!-- Notification Dropdown Panel -->
+          <div id="notifications-dropdown" class="hidden absolute right-0 mt-2 w-80 sm:w-96 bg-[#0e1622]/98 backdrop-blur-2xl border border-white/15 rounded-2xl shadow-2xl z-50 overflow-hidden font-sans">
+            <div class="p-3 px-4 bg-[#131d2b] border-b border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="bell" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <h4 class="font-extrabold text-xs text-white">Civic Emergency Alerts</h4>
+              </div>
+              <button onclick="clearNotifications()" class="text-[10px] text-slate-400 hover:text-cyan-300 font-bold transition">Clear All</button>
+            </div>
+            <div id="notifications-list" class="max-h-64 overflow-y-auto p-2.5 space-y-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-2">
+                <span class="text-sm shrink-0">⚠️</span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-extrabold text-xs text-red-300 truncate">Zone 1: Flood Alert Level 3</h5>
+                    <span class="text-[9px] text-slate-400 font-mono">14:28</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">Kamptee Nag River north bridge dewatering unit deployed.</p>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-2">
+                <span class="text-sm shrink-0">🚦</span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-extrabold text-xs text-amber-300 truncate">Zone 2: Sitabuldi Traffic Snarl</h5>
+                    <span class="text-[9px] text-slate-400 font-mono">14:30</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">Culvert stormwater overflow; Outer Ring Road detour active.</p>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-start gap-2">
+                <span class="text-sm shrink-0">🏥</span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-extrabold text-xs text-purple-300 truncate">Zone 3: Hingna Vector Fogging</h5>
+                    <span class="text-[9px] text-slate-400 font-mono">14:31</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">Mobile Fogging Squad #2 assigned to MIDC sector B.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 bg-[#131d2b] border-t border-white/10 text-center">
+              <button onclick="switchTab('comms'); toggleNotifications();" class="text-[10px] text-cyan-400 hover:underline font-bold">Open Incident Dispatch Console ↗</button>
+            </div>
+          </div>
         </div>
 
         <!-- User Avatar with Dropdown: Dr. Vipin Itankar, IAS -->
@@ -1199,6 +1247,6 @@
   </div>
 
   <!-- App Javascript with Cache-Buster -->
-  <script src="app.js?v=2026.4"></script>
+  <script src="app.js?v=2026.5"></script>
 </body>
 </html>
