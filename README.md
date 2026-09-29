@@ -2,17 +2,19 @@
 
 <div align="center">
 
+<img src="assets/images/synthcity_nmc_logo.jpg" alt="NMC SynthCity Official Logo" width="160" style="border-radius: 50%; box-shadow: 0 0 25px rgba(56, 189, 248, 0.4); margin-bottom: 12px;"/>
+
 ![Project SynthCity Hero Banner](assets/images/synthcity_hero_banner.jpg)
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2563eb?style=for-the-badge&logo=github&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
-[![Build Status](https://img.shields.io/badge/System-Operational_2026-10b981?style=for-the-badge&logo=github-actions&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
+[![Administration](https://img.shields.io/badge/NMC_Administration-Dr._Vipin_Itankar,_IAS-f59e0b?style=for-the-badge&logo=civicrm&logoColor=white)](https://nmcnagpur.gov.in/)
+[![System Status](https://img.shields.io/badge/System-Operational_2026-10b981?style=for-the-badge&logo=github-actions&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
 [![Hardware](https://img.shields.io/badge/Hardware-ESP32_+_HC--SR04-06B6D4?style=for-the-badge&logo=espressif&logoColor=white)](https://yuvrajlokhande19.github.io/synthcity/)
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Leaflet](https://img.shields.io/badge/Leaflet-v1.9.4-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
 <p align="center">
-  <b>Autonomous Multi-Agent Civic Orchestration, IoT Flood Sensor Telemetry & Crisis Management for Nagpur Metropolitan Region</b>
+  <b>Autonomous Multi-Agent Civic Orchestration, IoT Flood Telemetry & Real-Time Emergency Management for Nagpur Municipal Corporation (NMC)</b>
 </p>
 
 [🌐 **Launch Live Demo App**](https://yuvrajlokhande19.github.io/synthcity/) • [📸 **UI Screenshots**](#-system-screenshots--ui-walkthrough) • [🤖 **Multi-Agent Architecture**](#-6-ai-agent-multi-tier-architecture) • [🔌 **ESP32 Hardware Setup**](#-iot-hardware-telemetry--esp32-flood-station) • [🛠️ **Quick Start**](#️-quick-start-guide)
@@ -23,9 +25,9 @@
 
 ## 🌟 Overview
 
-**Project SynthCity** is a 2026 next-generation, autonomous multi-agent civic intelligence and crisis response platform purpose-built for the **Nagpur Metropolitan Region, Maharashtra, India**. 
+**Project SynthCity** is an autonomous multi-agent civic intelligence and crisis response platform purpose-built for the **Nagpur Municipal Corporation (NMC) & Nagpur Smart City (NSSCDCL)** under the leadership of Municipal Commissioner & CEO **Dr. Vipin Itankar, IAS**.
 
-The system harmonizes real-time **ESP32 IoT ultrasonic hydrological telemetry**, open weather feeds (Open-Meteo REST API), citizen reporting via Telegram C2 bot, dynamic municipal squad routing, and a **6-tier AI multi-agent swarm** powered by an intelligent key-rotator and multi-model cascade (Gemini 3.1 Flash Lite $\rightarrow$ Gemma 4 $\rightarrow$ Gemini 3.6 Flash).
+The platform bridges real-time **ESP32 IoT ultrasonic hydrological telemetry**, Open-Meteo weather forecasts, citizen reporting via Telegram C2 bot, dynamic municipal squad routing, and a **6-tier AI multi-agent swarm** powered by intelligent key rotation and multi-model cascade (Gemini 3.1 Flash Lite $\rightarrow$ Gemma 4 $\rightarrow$ Gemini 3.6 Flash).
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════════════════╗

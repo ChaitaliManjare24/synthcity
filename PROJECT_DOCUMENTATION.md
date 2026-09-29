@@ -1,7 +1,7 @@
 # PROJECT SYNTHCITY NAGPUR - COMPLETE MULTI-AGENT CIVIC INTELLIGENCE PLATFORM MANUAL
 
 ## 1. Executive Summary & Architectural Overview
-**Project SynthCity Nagpur** is an autonomous, multi-agent civic intelligence and crisis response platform designed specifically for the Nagpur Metropolitan Region. The system bridges hardware telemetry (ESP32 IoT ultrasonic flood sensors), citizen reporting channels (Telegram Bot API & Web Portal), multi-channel emergency alerting (WhatsApp Business API / Twilio), live open-data APIs (Open-Meteo Weather REST API & Google News RSS feeds), and real-time cloud sync (Firebase Realtime Database).
+**Project SynthCity Nagpur** is an autonomous, multi-agent civic intelligence and crisis response platform designed specifically for the **Nagpur Municipal Corporation (NMC)** and **Nagpur Smart City (NSSCDCL)** under the executive oversight of Municipal Commissioner & CEO **Dr. Vipin Itankar, IAS**. The system bridges hardware telemetry (ESP32 IoT ultrasonic flood sensors), citizen reporting channels (Telegram Bot API & Web Portal), multi-channel emergency alerting (WhatsApp Business API / Twilio), live open-data APIs (Open-Meteo Weather REST API & Google News RSS feeds), and real-time cloud sync (Firebase Realtime Database).
 
 The platform orchestrates **6 specialized AI agents** operating in a coordinated 3-tier hierarchy to manage flood risks, vector health hazards, urban traffic bottlenecks, municipal field squad dispatches, and executive command.
 

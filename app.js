@@ -777,8 +777,8 @@ async function sendDirectAIChat(event) {
       <div class="flex-1 min-w-0 space-y-1">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <h4 class="font-extrabold text-xs text-white">Alex Carter</h4>
-            <span class="px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-300 text-[10px] font-bold border border-blue-500/30">Admin Directive</span>
+            <h4 class="font-extrabold text-xs text-white">Dr. Vipin Itankar, IAS</h4>
+            <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/30">NMC Commissioner & CEO</span>
           </div>
           <span class="text-[10px] font-mono text-slate-400">${timeNow}</span>
         </div>

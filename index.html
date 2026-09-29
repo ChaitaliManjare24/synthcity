@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project SynthCity Nagpur | Autonomous Civic Intelligence C2</title>
+  <title>Project SynthCity Nagpur | NMC Autonomous Civic Intelligence C2</title>
 
-  <!-- Favicon Icon (SynthCity Civic C2 Globe) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/><path d='M2 12h20'/></svg>">
+  <!-- Favicon Icon (Official NMC SynthCity Logo) -->
+  <link rel="icon" type="image/jpeg" href="assets/images/synthcity_nmc_logo.jpg">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,8 +27,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Configuration & Custom Styles with Cache-Buster -->
-  <script src="config.js?v=2026.3"></script>
-  <link rel="stylesheet" href="styles.css?v=2026.3">
+  <script src="config.js?v=2026.4"></script>
+  <link rel="stylesheet" href="styles.css?v=2026.4">
 
   <script>
     tailwind.config = {
@@ -66,21 +66,12 @@
   <aside class="w-64 bg-[#0e1622]/95 backdrop-blur-2xl border-r border-white/10 flex flex-col justify-between shrink-0 z-30 shadow-2xl">
     <div class="p-5 flex flex-col h-full">
       
-      <!-- Brand Header (Matching Screenshot 1 & 2) -->
-      <div class="flex items-center gap-3.5 pb-6 border-b border-white/10">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 text-white shrink-0">
-          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-            <path d="M9 22v-4h6v4"/>
-            <path d="M8 6h.01"/><path d="M16 6h.01"/>
-            <path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/>
-            <path d="M16 10h.01"/><path d="M16 14h.01"/>
-            <path d="M8 10h.01"/><path d="M8 14h.01"/>
-          </svg>
-        </div>
+      <!-- Brand Header with Official NMC SynthCity Logo -->
+      <div class="flex items-center gap-3 pb-6 border-b border-white/10">
+        <img src="assets/images/synthcity_nmc_logo.jpg" alt="NMC SynthCity Logo" class="w-12 h-12 rounded-2xl object-cover shadow-lg shadow-cyan-500/25 shrink-0 border border-amber-500/40">
         <div>
           <h1 class="font-extrabold text-lg tracking-tight text-white leading-tight">Synth<span class="text-cyan-400">City</span></h1>
-          <p class="text-[10px] font-bold tracking-wider text-slate-400 uppercase">Project SynthCity</p>
+          <p class="text-[10px] font-bold tracking-wider text-amber-400 uppercase">NMC Smart City C2</p>
         </div>
       </div>
 
@@ -121,18 +112,18 @@
         </button>
       </nav>
 
-      <!-- Bottom User Profile Footer (Matching Screenshot 2 & 3) -->
-      <div class="pt-4 border-t border-white/10 flex items-center justify-between" data-tooltip="Commanding Officer: Alex Carter (Admin)">
+      <!-- Bottom User Profile Footer: Municipal Commissioner & CEO, NMC -->
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between" data-tooltip="Commanding Officer: Dr. Vipin Itankar, IAS (Municipal Commissioner & CEO, NMC)">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center font-bold text-xs text-white shadow-md">
-            AC
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-600 to-cyan-600 flex items-center justify-center font-extrabold text-xs text-white shadow-md border border-amber-400/40">
+            VI
           </div>
           <div>
-            <h4 class="font-extrabold text-xs text-white leading-tight">Alex Carter</h4>
-            <p class="text-[11px] font-medium text-slate-400">Admin</p>
+            <h4 class="font-extrabold text-xs text-white leading-tight truncate max-w-[130px]">Dr. Vipin Itankar</h4>
+            <p class="text-[10px] font-semibold text-amber-300 truncate max-w-[130px]">Municipal Commissioner</p>
           </div>
         </div>
-        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" title="Admin Active"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" title="CEO Active"></div>
       </div>
     </div>
   </aside>
@@ -147,7 +138,7 @@
       <div class="flex items-center gap-3">
         <div>
           <h2 id="page-title" class="text-lg font-extrabold text-white tracking-tight leading-none">Dashboard</h2>
-          <p class="text-[11px] font-bold text-slate-400 mt-1">Nagpur Civic Intelligence C2</p>
+          <p class="text-[11px] font-bold text-slate-400 mt-1">Nagpur Municipal Corporation (NMC) Civic Intelligence C2</p>
         </div>
       </div>
 
@@ -178,11 +169,12 @@
           <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-600 text-white text-[9px] font-extrabold rounded-full flex items-center justify-center">1</span>
         </div>
 
-        <!-- User Avatar with Dropdown (Matching Screenshot 1) -->
-        <div class="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded-xl bg-white/5 border border-white/10 cursor-pointer" data-tooltip="Admin Profile: Alex Carter">
-          <div class="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white flex items-center justify-center text-[10px] font-bold">
-            AC
+        <!-- User Avatar with Dropdown: Dr. Vipin Itankar, IAS -->
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition" data-tooltip="NMC Municipal Commissioner & CEO: Dr. Vipin Itankar, IAS">
+          <div class="w-6 h-6 rounded-full bg-gradient-to-r from-amber-500 to-cyan-500 text-white flex items-center justify-center text-[10px] font-extrabold">
+            VI
           </div>
+          <span class="text-xs font-bold text-slate-200 hidden md:inline">Dr. Vipin Itankar</span>
           <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
         </div>
 
